@@ -40,55 +40,37 @@ places      = api.search_geo(query="Philippines", granularity="country"); place_
 query       = "place:%s -is:retweet -has:media" % place_id #print(" OR ".join(keywords))
 n           = 1
 
-
 #statuses = api.search_tweets(q=query, count=10000)
 tweets = tweepy.Cursor(api.search_tweets,q=query,tweet_mode="extended").items(n)
 
 for tweet in tweets:
-    content_type = [entity for entity in tweet.entities.keys if len(tweet.entities[entity])]
-    if tweet.full_text: content_type.append("text")
-    # TIMESTAMP         # datetime.datetime.now(),
-    # COLLECTOR         # collector
-    # TOPIC             # topic
-    # KEYWORDS          # ",".join(["\""+keyword+"\"" for keyword in keywords])
-    # ACCOUNT HANDLE    # "@" + tweet.user.screen_name
-    # ACCOUNT NAME      # tweet.user.name
-    # ACCOUNT BIO       # tweet.user.description
+    row = worksheet.max_row  + 1
+    content_type = ", ".join(["text"]+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
+
+    worksheet.cell(row=row, column=1).value = datetime.datetime.now()                                                       # TIMESTAMP         # datetime.datetime.now(),
+    worksheet.cell(row=row, column=2).value = collector                                                                     # COLLECTOR         # collector
+    worksheet.cell(row=row, column=3).value = topic                                                                         # TOPIC             # topic
+    worksheet.cell(row=row, column=4).value = ",".join(["\""+keyword+"\"" for keyword in keywords])                         # KEYWORDS          # ",".join(["\""+keyword+"\"" for keyword in keywords])
+    worksheet.cell(row=row, column=5).value = "@" + tweet.user.screen_name                                                  # ACCOUNT HANDLE    # "@" + tweet.user.screen_name
+    worksheet.cell(row=row, column=6).value = tweet.user.name                                                               # ACCOUNT NAME      # tweet.user.name
+    worksheet.cell(row=row, column=7).value = tweet.user.description                                                        # ACCOUNT BIO       # tweet.user.description
     # ACCOUNT TYPE      # 
-    # JOINED            # tweet.user.created_at
-    # FOLLOWING         # tweet.user.friends_count
-    # FOLLOWERS         # tweet.user.followers_count
-    # LOCATION          # places[0].full_name
-    # RAW DATA          # tweet.full_text
-    # TRANSLATED DATA   # preprocess.simplify_text(tweet.full_text)
+    worksheet.cell(row=row, column=9).value = tweet.user.created_at                                                         # JOINED            # tweet.user.created_at
+    worksheet.cell(row=row, column=10).value = tweet.user.friends_count                                                     # FOLLOWING         # tweet.user.friends_count
+    worksheet.cell(row=row, column=11).value = tweet.user.followers_count                                                   # FOLLOWERS         # tweet.user.followers_count
+    worksheet.cell(row=row, column=12).value = places[0].full_name                                                          # LOCATION          # places[0].full_name
+    worksheet.cell(row=row, column=13).value = tweet.full_text                                                              # RAW DATA          # tweet.full_text
+    worksheet.cell(row=row, column=14).value = preprocess.simplify_text(tweet.full_text)                                    # TRANSLATED DATA   # preprocess.simplify_text(tweet.full_text)
     # DATA TYPE         # 
-    # DATE POSTED       # tweet.created_at
-    # TWEET URL         # "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
+    worksheet.cell(row=row, column=16).value = tweet.created_at                                                             # DATE POSTED       # tweet.created_at
+    worksheet.cell(row=row, column=17).value = "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str  # TWEET URL         # "https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str
     # SCREENSHOT        # 
-    # CONTENT TYPE      # ", ".join(["text"]+[entity if len(tweet.entities[entity]) for entity in tweet.entities.keys])
-    # FAVORITES         # 
-    # REPLIES           # 
-    # RETWEETS          # 
+    worksheet.cell(row=row, column=18).value = content_type                                                                 # CONTENT TYPE      # ", ".join(["text"]+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
+    worksheet.cell(row=row, column=19).value = tweet.favorite_count                                                         # FAVORITES         # tweet.favorite_count
+    worksheet.cell(row=row, column=20).value = tweet.in_reply_to_status_id_str                                              # REPLIES           # tweet.in_reply_to_status_id_str
+    worksheet.cell(row=row, column=21).value = tweet.retweet_count                                                          # RETWEETS          # tweet.retweet_count
     # QOUTE TWEETS      # 
     # VIEWS             # 
     # RATING            # 
     # REASONING         # 
-    # OTHER DATA        # 
-
-    print(tweet)
-    print("https://twitter.com/" + tweet.user.screen_name + "/status/" + tweet.id_str)
-    print(content_type)
-    # print(tweet.full_text)
-    # print(preprocess.re_punc(tweet.full_text))
-    # print(preprocess.re_emoji(tweet.full_text))
-    # print(preprocess.simplify_text(tweet.full_text))
-    
-    # if preprocess.simplify_text(tweet.full_text):
-    #     csvWriter.writerow([    
-    #         datetime.datetime.now(),
-    #         collector,
-    #         topic,
-    #         ",".join(["\""+keyword+"\"" for keyword in keywords]),
-    #         tweet.full_text.encode('utf-8'),
-    #         preprocess.simplify_text(tweet.full_text),
-    #     ])
+    # OTHER DATA        #
