@@ -45,6 +45,7 @@ tweets = tweepy.Cursor(api.search_tweets,q=query,tweet_mode="extended").items(n)
 
 for tweet in tweets:
     row = worksheet.max_row  + 1
+    worksheet.insert_rows(row)
     content_type = ", ".join(["text"]+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
 
     worksheet.cell(row=row, column=1).value = datetime.datetime.now()                                                       # TIMESTAMP         # datetime.datetime.now(),
