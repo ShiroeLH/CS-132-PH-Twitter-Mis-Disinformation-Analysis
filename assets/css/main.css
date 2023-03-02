@@ -1919,6 +1919,7 @@ input, select, textarea {
 
 		.box.style1 {
 			padding: 3em 2em 3.5em 2em;
+			height: 40em;
 		}
 
 			.box.style1 h3 {
@@ -2370,6 +2371,7 @@ input, select, textarea {
 					max-width: 32em;
 					margin-left: auto !important;
 					margin-right: auto !important;
+					height: auto;
 				}
 
 				.box.style2 {
