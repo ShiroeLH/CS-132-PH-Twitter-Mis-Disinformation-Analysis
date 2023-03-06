@@ -248,24 +248,24 @@
 					</header>
 					<div class="row">
 						<div class="col-12">
-							<form method="post" action="#">
+							<form name="contact_form">
 								<div class="row">
 									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
+										<input type="text" name="name" id="name" placeholder="Name"/>
 									</div>
 									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
+										<input type="email" name="email" id="email" placeholder="Email"/>
 									</div>
 									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
+										<input type="text" name="subject" id="subject" placeholder="Subject"/>
 									</div>
 									<div class="col-12">
 										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
+											<li><button type="button" onclick="sendEmail()">Send a Message</button></li>
+											<li><button type="reset" value="Clear Form" class="alt">Clear Form</button></li>
 										</ul>
 									</div>
 								</div>
@@ -312,6 +312,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+			<script>
+				
+				function sendEmail(){
+					const form = document.getElementById("contact_form");
+					name = document.getElementById("name").value;
+					email = document.getElementById("email").value;
+					subject = document.getElementById("subject").value;
+					msg = document.getElementById("message").value;
+
+					console.log(name,email,subject,msg)
+
+					Email.send({
+						SecureToken : "407be161-47de-4374-8910-c55546e25918",
+						To : 'redelosreyes3@up.edu.ph,aealoveros@up.edu.ph,jsdoros1@up.edu.ph',
+						From : email,
+						Subject : subject,
+						Body : msg
+					}).then(
+					message => alert(message)
+					);
+
+				};
+
+				
+
+
+			</script>
 
 	</body>
 </html>
