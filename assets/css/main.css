@@ -1627,7 +1627,6 @@ input, select, textarea {
 	width: 25%;
 	position: relative;
 	bottom: -.2em;
-	
 }
 
 
@@ -2268,6 +2267,13 @@ input, select, textarea {
 					height: 24em;
 					margin: 0;
 				}
+
+		/* Logo */
+		.logo{
+			width: 25%;
+			position: relative;
+			bottom: -0.1em;
+		}
 
 	}
 
