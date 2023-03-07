@@ -327,10 +327,10 @@
 					console.log(name,email,subject,msg)
 
 					Email.send({
-						SecureToken : "407be161-47de-4374-8910-c55546e25918",
+						SecureToken : "29b05827-fffb-43d0-9f97-a4042e25d0f2",
 						To : 'redelosreyes3@up.edu.ph,aealoveros@up.edu.ph,jsdoros1@up.edu.ph',
-						From : email,
-						Subject : subject,
+						From : 'cs132contactus@gmail.com',
+						Subject : [subject,'from ',email].join(''),
 						Body : msg
 					}).then(
 					message => alert(message)
