@@ -226,6 +226,31 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 
+		div.r-question {
+			width: 100%;
+			height: auto;
+			background-color: transparent;
+			padding-bottom: 75px;
+			
+			
+		}
+		div.q-col {
+			width: 70%;
+			background-color: transparent;
+			text-align: left;
+			margin: auto;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		
+		}
+	
+		div.l {
+			width: 100%;
+			background-color: transparent;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
 /* Container */
 
 	.container {
