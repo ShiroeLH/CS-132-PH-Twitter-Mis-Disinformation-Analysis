@@ -13,7 +13,7 @@ pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
+label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
@@ -24,6 +24,11 @@ section, summary, time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;}
+
+form{
+	padding-left: 15em;
+	padding-right: 15em;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -221,6 +226,31 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 
+		div.r-question {
+			width: 100%;
+			height: auto;
+			background-color: transparent;
+			padding-bottom: 75px;
+			
+			
+		}
+		div.q-col {
+			width: 70%;
+			background-color: transparent;
+			text-align: left;
+			margin: auto;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		
+		}
+	
+		div.l {
+			width: 100%;
+			background-color: transparent;
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
 /* Container */
 
 	.container {
@@ -322,6 +352,8 @@ input, select, textarea {
 		.row.aln-bottom {
 			align-items: flex-end;
 		}
+
+	
 
 		.row > .imp {
 			order: -1;
@@ -1620,6 +1652,14 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
+/* logo */
+.logo{
+	width: 25%;
+	position: relative;
+	bottom: -.2em;
+}
+
+
 /* Image */
 
 	.image {
@@ -1642,6 +1682,19 @@ input, select, textarea {
 			width: 100%;
 			margin: 0 0 2em 0;
 		}
+
+		.image.mem-photo {
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+		}
+
+			.image.image.mem-photo>img{
+				border-radius: 50%;
+				height: 10em;
+				width: 10em;
+				margin: auto;
+			}
 
 		.image.left {
 			float: left;
@@ -1919,6 +1972,7 @@ input, select, textarea {
 
 		.box.style1 {
 			padding: 3em 2em 3.5em 2em;
+			height: 40em;
 		}
 
 			.box.style1 h3 {
@@ -1936,6 +1990,29 @@ input, select, textarea {
 			margin: -4em 0 4em -4em;
 			width: auto;
 		}
+
+		.box.style5 {
+			padding: 2em 3em 1em 2em;
+			height: auto;
+			margin-bottom: 2em;
+			text-shadow: 0px 0px 0px;
+		}
+
+			.box.style5 h3 {
+				color: black;
+				margin-bottom: 0.25em;
+			}
+
+		.description{
+			padding: 2em 1em 0em 1em;
+			color: black;
+			text-align: justify;
+			font-size: small;
+		}
+
+		
+
+
 
 /* Icons */
 
@@ -1964,6 +2041,8 @@ input, select, textarea {
 		.icon > .label {
 			display: none;
 		}
+
+		
 
 		.icon.solid:before {
 			font-weight: 900;
@@ -2014,11 +2093,12 @@ input, select, textarea {
 			text-shadow: -1px -1px 0px #181818;
 		}
 
-			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
+			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
 				color: #fff;
 			}
 
 			.wrapper.style4 form input[type=text],
+			.wrapper.style4 form input[type=email],
 			.wrapper.style4 form input[type=password],
 			.wrapper.style4 form select,
 			.wrapper.style4 form textarea {
@@ -2027,11 +2107,14 @@ input, select, textarea {
 			}
 
 				.wrapper.style4 form input[type=text]:focus,
+				.wrapper.style4 form input[type=email]:focus,
 				.wrapper.style4 form input[type=password]:focus,
 				.wrapper.style4 form select:focus,
 				.wrapper.style4 form textarea:focus {
 					background: #252525;
 				}
+
+			
 
 /* Nav */
 
@@ -2198,11 +2281,11 @@ input, select, textarea {
 			.wrapper {
 				padding: 5em 0 5em 0;
 				text-align: center;
-			}
+			}	
 
 				.wrapper.style4 .row-special {
 					margin: 2em 0 0 0;
-					padding: 2em 0 2em 0;
+					padding: 20em 0 2em 0;
 				}
 
 		/* Articles */
@@ -2216,6 +2299,13 @@ input, select, textarea {
 					height: 24em;
 					margin: 0;
 				}
+
+		/* Logo */
+		.logo{
+			width: 25%;
+			position: relative;
+			bottom: -0.1em;
+		}
 
 	}
 
@@ -2370,12 +2460,20 @@ input, select, textarea {
 					max-width: 32em;
 					margin-left: auto !important;
 					margin-right: auto !important;
+					height: auto;
 				}
 
 				.box.style2 {
 					max-width: 32em;
 					margin-left: auto !important;
 					margin-right: auto !important;
+				}
+
+				.box.style5{
+					max-width: 32em;
+					margin-left: auto !important;
+					margin-right: auto !important;
+					height: auto;
 				}
 
 		/* Wrappers */

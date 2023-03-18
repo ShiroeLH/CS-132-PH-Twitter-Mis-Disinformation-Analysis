@@ -29,14 +29,11 @@
 			<article id="top" class="wrapper style1">
 				<div class="container">
 					<div class="row">
-						<div class="col-4 col-5-large col-12-medium">
-							<span class="image fit"><img src="images/pic00.jpg" alt="" /></span>
-						</div>
-						<div class="col-8 col-7-large col-12-medium">
+						<div class="col-12-medium">
 							<header>
-								<h1>Hi. We are <strong>Group Name</strong>.</h1>
+								<h1>Hi. We are <img class= "logo centered mx-auto" src="images/logo.png" alt=""/>.</h1>
 							</header>
-							<p>And this is our project, <strong>Project Title</strong>, <em>a short explanation of the project objectives</em>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p>And this is our project, <strong>PH Twitter Fake News Analysis: Red tagging students from different universities</strong>, <em>which explores the extent to which Philippine Twitter accounts propagate student redtagging mis/disinformation</em></p>
 							<p>Data Science Team</p>
 							<ul style="list-style-type:none; margin-top:-30px;">
 							  <li>Rey Christian Delos Reyes, WFW</li>
@@ -53,34 +50,73 @@
 				<div class="container">
 					<header>
 						<h2>Here's an overview of our project.</h2>
-						<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+						<p>This project aims to look over the <b><em>prevalence of red-tagging of students on social media by scraping Twitter posts from different accounts aiming to falsely identify state university students as members of the CPP-NPA-NDF</em></b>. This project also quantitatively explores the extent to which Philippine Twitter accounts propagate this mis/disinformation.</p>
 					</header>
+					<div class="r-question">
+						<header>
+							<h2> Research Questions </h2>
+						</header>
+						<h4>What events have triggered the prevalence of redtagging of college and university students?</h4>
+							
+						<div class="q-col">
+							<div class="l">
+								<b> Hypothesis: </b>
+								<br> Political events trigger the red-tagging of university and college students.
+							</div>
+							<div class="l">
+							<b> Null Hypothesis:</b> 
+							<br> Political events have no correlation in the red-tagging of university and college students.
+							</div>
+							<div class="l">
+								<b>Action Plan:</b> 
+								<br> Analyze posting time of redtagging tweets and cluster them, associate political events to the made clusters if possible.
+							</div>
+						</div>
+
+						<h4>Which colleges or universities are most targeted by red tag-related tweets?</h4>
+							
+						<div class="q-col">
+							<div class="l">
+								<b> Hypothesis: </b>
+								<br>  State universities/top 4 universities [UP, ADMU, DLSU, UST] are the dominating targets of red tag tweets.
+							</div>
+							<div class="l">
+							<b> Null Hypothesis:</b> 
+							<br> No notable universities are dominating the red tag tweets target.
+							</div>
+							<div class="l">
+								<b>Action Plan:</b> 
+								<br> Analyze the tweet in such way that we associate certain phrases for each college or university and rank based on frequency.
+							</div>
+						</div>
+
+					</div>
 					<div class="row aln-center">
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon featured fa-comments"></span>
 								<h3>Motivation</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								<p>Freedom of expression, the right to life and security, and several human rights are all violated by the practice of "red tagging" (Khattab, 2022). The Philippine government should take action to put an end to "red tagging" and make sure that students are not targeted based on their political beliefs or expressing their sentiments and opinions.</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon solid featured fa-camera-retro"></span>
 								<h3>Problem</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								<p>Red tagging of students in the Philippines has become a serious concern, as many student organizations and individuals have been baselessly accused of being communists or terrorists. Red-tagging can lead to danger, as the Commission on Human Rights has frequently stated, noting that many people who were Red-tagged ultimately ended up being "killed, injured, illegally arrested, charged with trumped-up cases, or otherwise put in harm's way" (Burgos, 2022).</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon featured fa-thumbs-up"></span>
 								<h3>Solution</h3>
-								<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem dolore.</p>
+								<p>The purpose of this project is to contribute evidences that the Red-tagging of students really exists and is prevalent in social media platforms, specifically Twitter. This will increase awareness and hopefully reduce instances of Red-tagging that happen within the country specifically to students in universities and colleges.</p>
 							</section>
 						</div>
 					</div>
 					<footer>
 						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-						<a href="#portfolio" class="button large scrolly">Let's take a look at our data</a>
+						<a href="https://docs.google.com/spreadsheets/d/1-7lXaMizOqxijQ1IjuO6O9I7K9oNBKwkUZvbrQUemb8/edit?usp=sharing" class="button large scrolly" target="_blank">Let's take a look at our data</a>
 					</footer>
 				</div>
 			</article>
@@ -196,7 +232,7 @@
 					</div>
 					<footer>
 						<p>Want to learn more? Take a look at our source codes.</p>
-						<a href="#contact" class="button large scrolly">Github Repo</a>
+						<a href="https://github.com/ShiroeLH/CS-132-PH-Twitter-Mis-Disinformation-Analysis" class="button large scrolly" target="_blank">Github Repo</a>
 					</footer>
 				</div>
 			</article>
@@ -205,29 +241,70 @@
 			<article id="team" class="wrapper style4">
 				<div class="container medium">
 					<header>
+						<h2>Team Members</h2>
+					</header>
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
+									<h3>Rey Christian Delos Reyes </h3>
+									<p>redelosreyes3.edu.ph</p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">Rey Christian Delos Reyes is an undergraduate student in the University of the Philippines Diliman currently taking BS Computer Science. Currently holding his research under the supervision of ACL, his research interests encompasses P-system simulations and visualization which abstracts the models for studying and learning purposes. Moreover, he prospects to lead technical projects, pivoting on Software Development. </p>
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
+									<h3>Aira Mae Aloveros</h3>
+									<p>aealoveros@up.edu.ph</p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">Aira Mae Aloveros is a 4th year BS Computer Science student from the University of the Philippines, Diliman, currently taking a Data Science class under section CS 132 WFX. She is currently an undergraduate researcher at DCS Web Science Lab (WSL), focusing on redesigning the Philippine e-Government website and services based on citizen user requirements. She aspires to use technology to aid in Philippine nation-building through Software development, Database management, and Data science.</p>
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>Joshua Lloyd Doros</h3>
+									<p>jsdoros1@up.edu.ph</p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">Joshua Lloyd Doros is a University of the Philippines-Diliman student, currently taking a BS Computer Science degree. He studies Data Science under the CS 132 WFU class of Prof. Paul Regonia. He is under the DCS Computer Security Group, currently pursuing research on Serious Games as a medium for cybersecurity education. He is passionate about advancing his capabilities and learning new skills in the field of Computer Science.</p>
+								</div>	
+							</div>
+						</section>
+					</div>
+					<header>
 						<h2>We'd like to hear from you.</h2>
-						<p>You can add more information about the team members here.</p>
 					</header>
 					<div class="row">
 						<div class="col-12">
-							<form method="post" action="#">
+							<form name="contact_form">
 								<div class="row">
 									<div class="col-6 col-12-small">
-										<input type="text" name="name" id="name" placeholder="Name" />
+										<input type="text" name="name" id="name" placeholder="Name"/>
 									</div>
 									<div class="col-6 col-12-small">
-										<input type="text" name="email" id="email" placeholder="Email" />
+										<input type="email" name="email" id="email" placeholder="Email"/>
 									</div>
 									<div class="col-12">
-										<input type="text" name="subject" id="subject" placeholder="Subject" />
+										<input type="text" name="subject" id="subject" placeholder="Subject"/>
 									</div>
 									<div class="col-12">
 										<textarea name="message" id="message" placeholder="Message"></textarea>
 									</div>
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" /></li>
-											<li><input type="reset" value="Clear Form" class="alt" /></li>
+											<li><button type="button" onclick="sendEmail()">Send a Message</button></li>
+											<li><button type="reset" value="Clear Form" class="alt">Clear Form</button></li>
 										</ul>
 									</div>
 								</div>
@@ -274,6 +351,36 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+			<script>
+				
+				function sendEmail(){
+					const form = document.getElementById("contact_form");
+					name = document.getElementById("name").value;
+					email = document.getElementById("email").value;
+					subject = document.getElementById("subject").value;
+					msg = document.getElementById("message").value;
+
+					console.log(name,email,subject,msg)
+
+					Email.send({
+						SecureToken : "29b05827-fffb-43d0-9f97-a4042e25d0f2",
+						To : 'redelosreyes3@up.edu.ph,aealoveros@up.edu.ph,jsdoros1@up.edu.ph',
+						From : 'cs132contactus@gmail.com',
+						Subject : [subject,' from ',email].join(''),
+						Body : msg
+					}).then(
+					message => alert(message)
+					);
+
+				};
+
+				
+
+
+			</script>
 
 	</body>
 </html>
