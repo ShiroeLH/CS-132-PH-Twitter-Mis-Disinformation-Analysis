@@ -21,6 +21,12 @@ status_ids = [int(status.split('/')[-1]) for status in statuses]
 # Open/create a file to append data to and use csv writer
 csvFile = open('tweets/datasets/tweets_dataset.csv', 'a', newline='', encoding='utf-8')
 csvWriter = csv.writer(csvFile)
+csvWriter.writerow([
+                    'TIMESTAMP', 'COLLECTOR', 'TOPIC', 'KEYWORDS', 'ACCOUNT HANDLE',
+                    'ACCOUNT NAME', 'ACCOUNT BIO', 'JOINED', 'FOLLOWING', 'FOLLOWERS',
+                    'LOCATION', 'RAW DATA', 'TRANSLATED DATA', 'DATE POSTED', 'TWEET URL',
+                    'CONTENT TYPE', 'FAVORITES', 'REPLIES', 'RETWEETS',
+                ])
 
 # Authentication
 auth = tweepy.OAuth2AppHandler(
@@ -40,30 +46,23 @@ for id in status_ids:
     content_type = ', '.join(['text']+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
 
     csvWriter.writerow([
-                    datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S %p"),
-                    collector,
-                    topic,
-                    keywords,
-                    '@' + tweet.user.screen_name,
-                    tweet.user.name,
-                    tweet.user.description,
-                    '',
-                    tweet.user.created_at,
-                    tweet.user.friends_count,
-                    tweet.user.followers_count,
-                    places[0].full_name,
-                    tweet.full_text,
-                    preprocess.simplify_text(tweet.full_text),
-                    '',
-                    tweet.created_at,
-                    'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,
-                    content_type,
-                    tweet.favorite_count,
-                    tweet.in_reply_to_status_id_str,
-                    tweet.retweet_count,
-                    '',
-                    '',
-                    '',
-                    '',
-                    '',
+                    datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S %p"),                           # TIMESTAMP
+                    collector,                                                                          # COLLECTOR
+                    topic,                                                                              # TOPIC
+                    keywords,                                                                           # KEYWORDS
+                    '@' + tweet.user.screen_name,                                                       # ACCOUNT HANDLE
+                    tweet.user.name,                                                                    # ACCOUNT NAME
+                    tweet.user.description,                                                             # ACCOUNT BIO
+                    tweet.user.created_at,                                                              # JOINED
+                    tweet.user.friends_count,                                                           # FOLLOWING
+                    tweet.user.followers_count,                                                         # FOLLOWERS
+                    places[0].full_name,                                                                # LOCATION
+                    tweet.full_text,                                                                    # RAW DATA
+                    preprocess.simplify_text(tweet.full_text),                                          # TRANSLATED DATA
+                    tweet.created_at,                                                                   # DATE POSTED
+                    'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str,        # TWEET URL
+                    content_type,                                                                       # CONTENT TYPE 
+                    tweet.favorite_count,                                                               # FAVORITES 
+                    tweet.in_reply_to_status_id_str,                                                    # REPLIES
+                    tweet.retweet_count,                                                                # RETWEETS
                 ])
