@@ -10,7 +10,7 @@ import preprocess
 import pprint
 
 # Open the dataset workbook
-workbook = openpyxl.load_workbook(filename = 'tweets/datasets/Dataset - Group 32 datasheet.xlsx')
+workbook = openpyxl.load_workbook(filename = 'tweets/datasets/Dataset - Group 32.xlsx')
 worksheet = workbook['Data']
 
 # Write to another workbook
@@ -22,6 +22,15 @@ statuses = []
 for iterator in range(3,worksheet.max_row):
     statuses.append(worksheet.cell(row=iterator,column=3).value)
 status_ids = [int(status.split('/')[-1]) for status in statuses]
+
+if len(status_ids) == len(set(status_ids)):
+    print('No duplicate IDs')
+else:
+    dup = {x for x in status_ids if status_ids.count(x) > 1}
+    print('Duplicate IDs found')
+    dup = list(dup)
+    print(dup)
+    sys.exit()
 
 # Open/create a file to append data to and use csv writer
 csvFile = open('tweets/datasets/tweets_dataset.csv', 'a', newline='', encoding='utf-8')
@@ -58,28 +67,31 @@ for index, id in enumerate(headers):
 
 # Get all statuses
 for index, id in enumerate(status_ids):
-    tweet = api.get_status(id, tweet_mode='extended')
-    content_type = ', '.join(['text']+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
+    try:
+        tweet = api.get_status(id, tweet_mode='extended')
+        content_type = ', '.join(['text']+[entity for entity in tweet.entities.keys() if len(tweet.entities[entity])])
 
-    worksheet2.write(index+1, 0, datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S %p"))
-    worksheet2.write(index+1, 1, collector)
-    worksheet2.write(index+1, 2, topic)
-    worksheet2.write(index+1, 3, keywords)
-    worksheet2.write(index+1, 4, '@' + tweet.user.screen_name)
-    worksheet2.write(index+1, 5, tweet.user.name)
-    worksheet2.write(index+1, 6, tweet.user.description)
-    worksheet2.write(index+1, 7, tweet.user.created_at.strftime("%d/%m/%Y %H:%M:%S %p"))
-    worksheet2.write(index+1, 8, tweet.user.friends_count)
-    worksheet2.write(index+1, 9, tweet.user.followers_count)
-    worksheet2.write(index+1, 10, places[0].full_name)
-    worksheet2.write(index+1, 11, tweet.full_text)
-    worksheet2.write(index+1, 12, preprocess.simplify_text(tweet.full_text))
-    worksheet2.write(index+1, 13, tweet.created_at.strftime("%d/%m/%Y %H:%M:%S %p"))
-    worksheet2.write(index+1, 14, 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str)
-    worksheet2.write(index+1, 15, content_type)
-    worksheet2.write(index+1, 16, tweet.favorite_count)
-    # worksheet2.write(index+1, 17, tweet.in_reply_to_status_id_str)
-    worksheet2.write(index+1, 17, tweet.retweet_count)
+        worksheet2.write(index+1, 0, datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S %p"))
+        worksheet2.write(index+1, 1, collector)
+        worksheet2.write(index+1, 2, topic)
+        worksheet2.write(index+1, 3, keywords)
+        worksheet2.write(index+1, 4, '@' + tweet.user.screen_name)
+        worksheet2.write(index+1, 5, tweet.user.name)
+        worksheet2.write(index+1, 6, tweet.user.description)
+        worksheet2.write(index+1, 7, tweet.user.created_at.strftime("%d/%m/%Y %H:%M:%S %p"))
+        worksheet2.write(index+1, 8, tweet.user.friends_count)
+        worksheet2.write(index+1, 9, tweet.user.followers_count)
+        worksheet2.write(index+1, 10, places[0].full_name)
+        worksheet2.write(index+1, 11, tweet.full_text)
+        worksheet2.write(index+1, 12, preprocess.simplify_text(tweet.full_text))
+        worksheet2.write(index+1, 13, tweet.created_at.strftime("%d/%m/%Y %H:%M:%S %p"))
+        worksheet2.write(index+1, 14, 'https://twitter.com/' + tweet.user.screen_name + '/status/' + tweet.id_str)
+        worksheet2.write(index+1, 15, content_type)
+        worksheet2.write(index+1, 16, tweet.favorite_count)
+        # worksheet2.write(index+1, 17, tweet.in_reply_to_status_id_str)
+        worksheet2.write(index+1, 17, tweet.retweet_count)
+    except:
+        continue
 
 
 workbook2.close()
