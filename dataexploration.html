@@ -18,10 +18,14 @@
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="#preprocessing">Preprocessing</a></li>
-					<li><a href="#visualization">Visualization</a></li>
-					<li><a href="#features">Features</a></li>
-					<li><a href="#contact">Contact us</a></li>
+					<li><a href="index.html#overview">Overview</a></li>
+					<li><a href="index.html#data">Data</a></li>
+					<li><a href="index.html#methods">Methods</a></li>
+					<li><a href="#top">Exploration</a></li>
+					<li><a href="index.html#methods">Modeling</a></li>
+					<li><a href="index.html#results">Results</a></li>
+					<li><a href="index.html#team">Team</a></li>
+
 				</ul>
 			</nav>
 			
@@ -30,19 +34,21 @@
 			<article id="top" class="wrapper style1">
 				<div class="container">
 					<div class="row">
-						<div class="col-12-xlarge centered">
-							<img class= "logo centered" src="images/logo.png" alt=""/>
-						</div>
 						
 					</div>
 					<div class="row">
 						<div class="col-12-medium">
 							<header>
-								<h1>Data exploration</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </em></p>
+								<h1>Data Exploration</h1>
+								<p>At this point, we have enough data to analyze. But before we jump to modeling, we need to explore the data that we've collected and make sure that they are clean and appropriate for our research objectives.
+
+								There are three main tasks in the data exploration stage: <strong><em><a href="#preprocessing" style="text-decoration: none;">Preprocessing</a></em></strong>, <strong><em><a href="#visualization" style="text-decoration: none;">Visualization</a></em></strong>, and <strong><em><a href="#features" style="text-decoration: none;">Features Analysis</a></em></strong></p>
 							</header>
 						</div>
 					</div>
+					<footer>
+						<a href="https://github.com/ShiroeLH/CS-132-PH-Twitter-Mis-Disinformation-Analysis/blob/main/analysis/analysis.ipynb" class="button large scrolly  justify-content-center" target="_blank">Take a look at our Data Exploration code</a>
+					</footer>
 				</div>
 			</article>
 
@@ -54,70 +60,88 @@
 						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
 					</header>
 					<div class="r-question">
-						<section class="box style5">
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>Handling missing values/ensuring no missing values</h3>
-									<p></p>
-								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-								</div>	
+						<div class="row">
+							<div class="col-6">
+								<section class="box style5">
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
+											<h5>Handling missing values/ensuring no missing values</h5>
+											<p></p>
+										</div>
+										<div class="col-8 col-6-medium col-12-small">
+											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns screenshot, location, views and remarks are dropped since they have missing values. For account without bio, empty string ("") were used.
+											</p>
+										</div>	
+									</div>
+								</section>
 							</div>
-						</section>
-
-						<section class="box style5">
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>Handling outliers</h3>
-									<p></p>
-								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-								</div>	
+							<div class="col-6">
+								<section class="box style5">
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
+											<h5>Handling outliers</h5>
+											<p></p>
+										</div>
+										<div class="col-8 col-6-medium col-12-small">
+											<p class = "description">[TBF]In this step, outliers are detected using statistical techniques such as the Z-score or the interquartile range (IQR), and they are either removed or adjusted to more reasonable values.
+											</p>
+										</div>	
+									</div>
+								</section>
 							</div>
-						</section>
-
-						<section class="box style5">
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>Ensuring formatting consistency (date, labels, etc.)</h3>
-									<p></p>
-								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-								</div>	
+							<div class="col-6">
+								<section class="box style5">
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
+											<h5>Ensuring formatting consistency (date, labels, etc.)</h5>
+											<p></p>
+										</div>
+										<div class="col-8 col-6-medium col-12-small">
+											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS
+											</p>
+										</div>	
+									</div>
+								</section>
 							</div>
-						</section>
-
-						<section class="box style5">
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>Normalization/ standardization/ scaling</h3>
-									<p></p>
-								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-								</div>	
+							<div class="col-6">
+								<section class="box style5">
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
+											<h5>Normalization/ standardization/ scaling</h5>
+											<p></p>
+										</div>
+										<div class="col-8 col-6-medium col-12-small">
+											<p class = "description">Different features in the dataset may have different scales or units, which can affect the performance of certain algorithms. Normalization, standardization, or scaling techniques are applied to bring all features to a similar scale or distribution.
+											</p>
+										</div>	
+									</div>
+								</section>
 							</div>
-						</section>
-
-						<section class="box style5">
-							<div class="row">
-								<div class="col-4 col-6-medium col-12-small">
-									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>Categorical data encoding</h3>
-									<p></p>
-								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
-								</div>	
+							<div class="col-6">
+								<section class="box style5">
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
+											<h5>Categorical data encoding</h5>
+											<p></p>
+										</div>
+										<div class="col-8 col-6-medium col-12-small">
+											<p class = "description">To ensure easier exploration of data, the categorical feature Account type were encoded as numerical values: Anonymous(0), Identified(1), and Media (2) for exploration of correlation of acocunt type and number of engagement.
+											</p>
+										</div>	
+									</div>
+								</section>
 							</div>
-						</section>
+							<div class="col-6">
+								<section class="box style5" style="background-color: lightblue;">
+									
+								</section>
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -135,7 +159,8 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+									<p class = "description">Using WordCloud, the tweets is divided into individual words or tokens, which is then analyzed separately.Additionally, lowercasing is applied to ensure consistency and treat words with different capitalizations as the same. To determine which colleges and universities are most targeted in the red tag-related tweets, a dictionary is created. This dictionary consists of the acronyms or abbreviations of various colleges and universities, with their corresponding full names as the values. The dictionary is created in lowercase to match the lowercase tokens. The frequency of occurrence of each college or university is tracked by checking how many times their lowercase representation appears in the tokenized tweets. By analyzing the frequency of these colleges and universities in the tokens, it becomes possible to identify which ones are most frequently mentioned or targeted in the red tag-related tweets.
+									</p>
 								</div>	
 							</div>
 						</section>
@@ -148,7 +173,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+									<p class = "description">Stop words are removed to improve analysis or modeling efficiency. WordCloud library provides a predefined set of English stop words like "and," "the," and "in" that are frequently used but don't add much context. These words are eliminated from the dataset to prioritize more important terms and reduce noise. The word "up" is manually excluded from the English stop words to prevent mistakenly removing instances of "UP" referring to the  University of the Philippines. Filipino stop words are also considered. The words were sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl.">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets about colleges and universities.</p>
 								</div>	
 							</div>
 						</section>
@@ -161,7 +186,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+									<p class = "description">Stemming and lemmatization are techniques used to reduce words to their base or root form. Stemming involves removing prefixes and suffixes from words to obtain the stem, while lemmatization maps words to their base or dictionary form. These techniques help to reduce word variations and consolidate similar terms, improving the effectiveness of text analysis.</p>
 								</div>	
 							</div>
 						</section>
@@ -183,7 +208,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+									<p class = "description">Interpolation: Time series data often contains missing values or irregular intervals. Interpolation techniques are used to estimate the missing values based on the available data points. Common interpolation methods include linear interpolation, polynomial interpolation, or spline interpolation.</p>
 								</div>	
 							</div>
 						</section>
@@ -196,7 +221,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  </p>
+									<p class = "description">Binning is the process of dividing a continuous time series into discrete intervals or bins. This can be useful for aggregating data and analyzing trends at different time scales. Binning can be done based on fixed time intervals (e.g., hourly, daily) or adaptive intervals (e.g., based on data density or statistical properties).</p>
 								</div>	
 							</div>
 						</section>					
@@ -204,9 +229,7 @@
 				</div>
 
 			</div>
-					<footer>
-						<a href="https://github.com/ShiroeLH/CS-132-PH-Twitter-Mis-Disinformation-Analysis/blob/main/analysis/analysis.ipynb" class="button large scrolly" target="_blank">Take a look at our Data Exploration code</a>
-					</footer>
+					
 				</div>
 			</article>
 
@@ -215,47 +238,64 @@
 				<div class="container">
 					<header>
 						<h2>VISUALIZATION</h2>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>Various visualization techniques are employed to gain insights from the data and communicate findings effectively. Some common visualization methods include:</p>
 					</header>
 					<div class="row">
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 								<h3><a href="#">Scatterplots/histograms</a></h3>
-								<p>features distribution</p>
+								<p>These plots show the distribution and relationship between two continuous variables. Scatterplots display the relationship between variables, while histograms illustrate the distribution of a single variable.
+								</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
 								<h3><a href="#">Heat maps</a></h3>
-								<p>features correlation</p>
+								<p>Heat maps provide a visual representation of the correlation between different features. This is particularly useful for identifying patterns or relationships between variables in a tabular format.</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
 								<h3><a href="#">Bar/swarm/violin plots</a></h3>
-								<p>features comparison</p>
+								<p>These plots are used to compare categorical variables or visualize the distribution of a continuous variable across different categories. Bar plots display the frequency or count of each category, while swarm plots show individual data points along with the distribution. Violin plots combine a box plot and a kernel density plot to display the distribution of data.</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
 								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
 								<h3><a href="#">Line graphs</a></h3>
-								<p>time series</p>
+								<p>Line graphs are commonly used for time series analysis to visualize the trend or pattern of a variable over time. They show the relationship between two continuous variables with time on the x-axis.</p>
+							</article>
+						</div>
+						
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">3D/multidimensional/multivariate plots</a></h3>
+								<p>These plots are used to visualize relationships between multiple variables simultaneously. Examples include scatterplot matrices, which display scatterplots of multiple variable combinations in a grid format, providing a comprehensive view of pairwise relationships. Multidimensional or multivariate plots help to identify patterns, clusters, or correlations between multiple variables.</p>
+							</article>
+						</div>
+						
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Interactive plots</a></h3>
+								<p>Interactive plots allow users to explore and interact with the data by zooming, panning, hovering, or selecting specific data points. Tools like Plotly enable the creation of interactive visualizations that can provide more detailed information or allow for customized analysis.</p>
 							</article>
 						</div>
 					</div>
 					
 					<footer>
-						<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
+						<p>Each plot in the visualization stage should have a title or caption that clearly describes the purpose or key finding. Axes labels with units of measurement should be included to provide context for the variables being plotted. Legends are used when multiple colors, markers, or sizes are employed to differentiate different categories or groups in the plot.</p>
 					</footer>
 				</div>
 			</article>
 
 			<!-- Features -->
-			<article id="visualization" class="wrapper style3">
+			<article id="features" class="wrapper style3">
 				<div class="container">
 					<header>
 						<h2>FEATURES</h2>
@@ -267,21 +307,22 @@
 							<section class="box style1">
 								<span class="icon featured fa-comments"></span>
 								<h3>Feature selection (statistical test, correlation, machine learning)</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<p>Feature selection involves identifying the most relevant and informative features for the research objectives. Statistical tests, correlation analysis, or machine learning algorithms can be used to evaluate the importance or predictive power of each feature. The goal is to reduce dimensionality and focus on the most influential variables.</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon solid featured fa-camera-retro"></span>
 								<h3>Dimensionality reduction (PCA, SVD)</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<p>Dimensionality reduction techniques, such as Principal Component Analysis (PCA) or Singular Value Decomposition (SVD), are applied when dealing with high-dimensional data. These methods transform the original features into a lower-dimensional space while preserving the most important information. Dimensionality reduction helps to simplify the analysis and visualization of complex datasets.</p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon featured fa-thumbs-up"></span>
 								<h3>Feature generation/engineering (includes additional column/s during data collection)</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<p>Feature generation or engineering involves creating new features based on existing ones or external knowledge. This can include extracting additional columns during data collection or creating derived features that capture specific characteristics or relationships within the data. Feature engineering aims to improve the performance of the analysis or modeling process by providing more informative input variables.
+								</p>
 							</section>
 						</div>
 					</div>
@@ -293,7 +334,7 @@
 		<!-- We'd like to hear from you -->
 			<article id="contact" class="wrapper style4">
 				<div class="container medium">
-					<header>
+					<header> 
 						<h2>We'd like to hear from you</h2>
 					</header>
 					</div>
