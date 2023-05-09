@@ -1997,6 +1997,14 @@ input, select, textarea {
 			margin-bottom: 0.25em;
 		}
 
+		.box.style2:hover{
+			/* border-style: solid lightblue; */
+			background-color: lightblue;
+		}
+			/* .box.style2 .link {
+				background-color: lightblue;
+			} */
+
 		.box.style2 .image {
 			position: relative;
 			left: 2em;
