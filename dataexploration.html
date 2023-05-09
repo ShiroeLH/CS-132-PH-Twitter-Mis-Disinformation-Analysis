@@ -56,7 +56,7 @@
 			<article id="preprocessing" class="wrapper style2">
 				<div class="container">
 					<header>
-						<h2>PREPROCESSING</h2>
+						<h1>PREPROCESSING</h1>
 						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
 					</header>
 					<div class="r-question">
@@ -130,7 +130,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">To ensure easier exploration of data, the categorical feature Account type were encoded as numerical values: Anonymous(0), Identified(1), and Media (2) for exploration of correlation of acocunt type and number of engagement.
+											<p class = "description">To ensure easier exploration of data, the categorical feature Account type were encoded as numerical values: Anonymous(0), Identified(1), and Media (2) for exploration of correlation of acocunt type and number of engagement. The emoji were also transformed into text for frequency analysis as seen in the word cloud below.
 											</p>
 										</div>	
 									</div>
@@ -173,7 +173,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Stop words are removed to improve analysis or modeling efficiency. WordCloud library provides a predefined set of English stop words like "and," "the," and "in" that are frequently used but don't add much context. These words are eliminated from the dataset to prioritize more important terms and reduce noise. The word "up" is manually excluded from the English stop words to prevent mistakenly removing instances of "UP" referring to the  University of the Philippines. Filipino stop words are also considered. The words were sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl.">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets about colleges and universities.</p>
+									<p class = "description">Stop words are removed to improve analysis or modeling efficiency. WordCloud library provides a predefined set of English stop words like "and," "the," and "in" that are frequently used but don't add much context. These words are eliminated from the dataset to prioritize more important terms and reduce noise. The word "up" is manually excluded from the English stop words to prevent mistakenly removing instances of "UP" referring to the  University of the Philippines. Filipino stop words are also considered. The words were sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl" target="_blank">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets about colleges and universities.</p>
 								</div>	
 							</div>
 						</section>
@@ -237,53 +237,96 @@
 			<article id="visualization" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>VISUALIZATION</h2>
+						<h1>VISUALIZATION</h1>
 						<p>Various visualization techniques are employed to gain insights from the data and communicate findings effectively. Some common visualization methods include:</p>
 					</header>
 					<div class="row">
+						<header>
+							<h3>Scatterplots/histograms</h3>
+							<p>These plots show the distribution and relationship between two continuous variables. Scatterplots display the relationship between variables, while histograms illustrate the distribution of a single variable.:</p>
+						</header>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-								<h3><a href="#">Scatterplots/histograms</a></h3>
-								<p>These plots show the distribution and relationship between two continuous variables. Scatterplots display the relationship between variables, while histograms illustrate the distribution of a single variable.
+								<div class="image visualization"><img src="images/visualization/scatterplot_1.png" alt="" /></div>
+								<p>
+									This scatterplot display the relationship between the number of retweets and the length of the tweet.
 								</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Heat maps</a></h3>
-								<p>Heat maps provide a visual representation of the correlation between different features. This is particularly useful for identifying patterns or relationships between variables in a tabular format.</p>
+								<div class="image visualization"><img src="images/visualization/scatterplot_2.png" alt="" /></div>
+								<p>
+									This scatterplot display the relationship between the content type and the number of engagements of the tweet
+								</p>
+							</article>
+						</div>
+						<header>
+							<h3>Heat maps</h3>
+							<p>Heat maps provide a visual representation of the correlation between different features. This is particularly useful for identifying patterns or relationships between variables in a tabular format.</p>
+						</header>
+						<div class="col-12 col-6-medium col-12-small">
+							<article class="box style2">
+								<div href="#" class="image visualization"><img src="images/visualization/heatmap_1.png" alt="" /></div>
+								<p>Visual representation of the correlation between number of likes, replies, and retweets, and length of tweet</p>
+							</article>
+						</div>
+						<header>
+							<h3>Bar/swarm/violin plots</h3>
+							<p>These plots are used to compare categorical variables or visualize the distribution of a continuous variable across different categories. Bar plots display the frequency or count of each category, while swarm plots show individual data points along with the distribution. Violin plots combine a box plot and a kernel density plot to display the distribution of data.</p>
+						</header>
+						<div class="col-12 col-6-medium col-12-small">
+							<article class="box style2">
+								<div href="#" class="image visualization"><img src="images/visualization/bargraph_1.png" alt="" /></div>
+								
+								<p>This bar plot display the frequency of each length of tweets</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Bar/swarm/violin plots</a></h3>
-								<p>These plots are used to compare categorical variables or visualize the distribution of a continuous variable across different categories. Bar plots display the frequency or count of each category, while swarm plots show individual data points along with the distribution. Violin plots combine a box plot and a kernel density plot to display the distribution of data.</p>
+								<div href="#" class="image visualization"><img src="images/visualization/wordcloud_1.png" alt="" /></div>
+								<p>This Word Cloud serves as a visual representation of the frequency of words within the gathered tweets</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Line graphs</a></h3>
-								<p>Line graphs are commonly used for time series analysis to visualize the trend or pattern of a variable over time. They show the relationship between two continuous variables with time on the x-axis.</p>
+								<div href="#" class="image visualization"><img src="images/visualization/wordcloud_2.png" alt="" /></div>
+								<p>This Word Cloud serves as a visual representation of the frequency of Emojis within the gathered Account bio</p>
 							</article>
 						</div>
+						<header>
+							<h3>Line graphs</h3>
+							<p>Line graphs are commonly used for time series analysis to visualize the trend or pattern of a variable over time. They show the relationship between two continuous variables with time on the x-axis.</p>
+						</header>
+						<div class="col-12 col-6-medium col-12-small">
+							<article class="box style2">
+								<div href="#" class="image visualization"><img src="images/visualization/timeseries_1.png" alt="" /></div>
+								<p>This line graph or time series graph shows frequency of tweets over the given time period</p>
+							</article>
+						</div>
+
+						<header>
+							<h3>3D/multidimensional/multivariate plots</h3>
+							<p>These plots are used to visualize relationships between multiple variables simultaneously. Examples include scatterplot matrices, which display scatterplots of multiple variable combinations in a grid format, providing a comprehensive view of pairwise relationships. Multidimensional or multivariate plots help to identify patterns, clusters, or correlations between multiple variables.</p>
+						</header>
 						
-						<div class="col-6 col-6-medium col-12-small">
+						<div class="col-12 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">3D/multidimensional/multivariate plots</a></h3>
-								<p>These plots are used to visualize relationships between multiple variables simultaneously. Examples include scatterplot matrices, which display scatterplots of multiple variable combinations in a grid format, providing a comprehensive view of pairwise relationships. Multidimensional or multivariate plots help to identify patterns, clusters, or correlations between multiple variables.</p>
+								<h3><a href="#"></a></h3>
+								<p></p>
 							</article>
 						</div>
+
+						<header>
+							<h3>Interactive plots</h3>
+							<p>Interactive plots allow users to explore and interact with the data by zooming, panning, hovering, or selecting specific data points. Tools like Plotly enable the creation of interactive visualizations that can provide more detailed information or allow for customized analysis.</p>
+						</header>
 						
-						<div class="col-6 col-6-medium col-12-small">
+						
+						<div class="col-12 col-6-medium col-12-small">
 							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Interactive plots</a></h3>
-								<p>Interactive plots allow users to explore and interact with the data by zooming, panning, hovering, or selecting specific data points. Tools like Plotly enable the creation of interactive visualizations that can provide more detailed information or allow for customized analysis.</p>
+								<h3><a href="#"></a></h3>
+								<p></p>
 							</article>
 						</div>
 					</div>
@@ -298,7 +341,7 @@
 			<article id="features" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>FEATURES</h2>
+						<h1>FEATURE ANALYSIS</h1>
 						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
 					</header>
 
@@ -320,8 +363,8 @@
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon featured fa-thumbs-up"></span>
-								<h3>Feature generation/engineering (includes additional column/s during data collection)</h3>
-								<p>Feature generation or engineering involves creating new features based on existing ones or external knowledge. This can include extracting additional columns during data collection or creating derived features that capture specific characteristics or relationships within the data. Feature engineering aims to improve the performance of the analysis or modeling process by providing more informative input variables.
+								<h3>Feature generation /engineering (includes additional column/s during data collection)</h3>
+								<p>Feature generation or engineering involves creating new features based on existing ones or external knowledge. This can include extracting additional columns during data collection or creating derived features that capture specific characteristics or relationships within the data. 
 								</p>
 							</section>
 						</div>

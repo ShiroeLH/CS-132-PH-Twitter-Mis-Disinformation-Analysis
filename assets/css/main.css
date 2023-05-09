@@ -2003,6 +2003,8 @@ input, select, textarea {
 			top: 2em;
 			margin: -4em 0 4em -4em;
 			width: auto;
+			padding: 1em 1em;
+			min-height: 17em;
 		}
 
 		.box.style5 {
@@ -2473,6 +2475,16 @@ input, select, textarea {
 					width: auto;
 				}
 
+				.box .image.visualization {
+					position: relative;
+					left: 20px;
+					top: 20px;
+					margin: -50px 0 50px -40px;
+					width: auto;
+					height: 13em;
+					padding-top: 2em;
+				}
+
 				.box.style1 {
 					max-width: 32em;
 					margin-left: auto !important;
@@ -2484,6 +2496,7 @@ input, select, textarea {
 					max-width: 32em;
 					margin-left: auto !important;
 					margin-right: auto !important;
+					
 				}
 
 				.box.style5{
