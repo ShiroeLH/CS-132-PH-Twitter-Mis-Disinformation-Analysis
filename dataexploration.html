@@ -39,7 +39,7 @@
 					<div class="row">
 						<div class="col-12-medium">
 							<header>
-								<h1>Data Exploration</h1>
+								<h1><img class= "logo centered mx-auto" src="images/logo.png" alt=""/>'s Data Exploration</h1>
 								<p>At this point, we have enough data to analyze. But before we jump to modeling, we need to explore the data that we've collected and make sure that they are clean and appropriate for our research objectives.
 
 								There are three main tasks in the data exploration stage: <strong><em><a href="#preprocessing" style="text-decoration: none;">Preprocessing</a></em></strong>, <strong><em><a href="#visualization" style="text-decoration: none;">Visualization</a></em></strong>, and <strong><em><a href="#features" style="text-decoration: none;">Features Analysis</a></em></strong></p>
@@ -70,13 +70,13 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns screenshot, location, views and remarks are dropped since they have missing values. For account without bio, empty string ("") were used.
+											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns "Screenshot," "Location," "Views," and "Remarks" are dropped from the dataset as they contain missing values. For accounts without a bio, an empty string ("") is used to represent the missing value.
 											</p>
 										</div>	
 									</div>
 								</section>
 							</div>
-							<div class="col-6">
+							<!-- <div class="col-6">
 								<section class="box style5">
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
@@ -90,23 +90,23 @@
 										</div>	
 									</div>
 								</section>
-							</div>
+							</div> -->
 							<div class="col-6">
 								<section class="box style5">
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
 											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
-											<h5>Ensuring formatting consistency (date, labels, etc.)</h5>
+											<h5>Ensuring formatting consistency</h5>
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS
+											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS.
 											</p>
 										</div>	
 									</div>
 								</section>
 							</div>
-							<div class="col-6">
+							<!-- <div class="col-6">
 								<section class="box style5">
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
@@ -120,7 +120,7 @@
 										</div>	
 									</div>
 								</section>
-							</div>
+							</div> -->
 							<div class="col-6">
 								<section class="box style5">
 									<div class="row">
@@ -130,7 +130,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">To ensure easier exploration of data, the categorical feature Account type were encoded as numerical values: Anonymous(0), Identified(1), and Media (2) for exploration of correlation of acocunt type and number of engagement. The emoji were also transformed into text for frequency analysis as seen in the word cloud below.
+											<p class = "description">To facilitate data exploration, the categorical feature "Account type" was encoded into numerical values: 0 for "Anonymous," 1 for "Identified," and 2 for "Media." This encoding allows for the examination of correlations between the account type and the number of engagements. Additionally, the dataset's emoji data was transformed into textual representations to conduct frequency analysis, visualized in the word cloud, providing insights into the prevalence and impact of different emojis. 
 											</p>
 										</div>	
 									</div>
@@ -159,7 +159,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Using WordCloud, the tweets is divided into individual words or tokens, which is then analyzed separately.Additionally, lowercasing is applied to ensure consistency and treat words with different capitalizations as the same. To determine which colleges and universities are most targeted in the red tag-related tweets, a dictionary is created. This dictionary consists of the acronyms or abbreviations of various colleges and universities, with their corresponding full names as the values. The dictionary is created in lowercase to match the lowercase tokens. The frequency of occurrence of each college or university is tracked by checking how many times their lowercase representation appears in the tokenized tweets. By analyzing the frequency of these colleges and universities in the tokens, it becomes possible to identify which ones are most frequently mentioned or targeted in the red tag-related tweets.
+									<p class = "description">In order to analyze the tweets effectively, the WordCloud technique is employed to break down the tweets into individual words or tokens, which are then examined separately. To identify the colleges and universities that are most targeted in the red tag-related tweets, a dictionary is constructed. This dictionary contains lowercase acronyms or abbreviations of various educational institutions, with their corresponding full names as the values. The frequency of each college or university is determined by counting how many times its lowercase representation appears among the tokenized tweets. By analyzing the frequency of these institutions in the tokens, we can identify the ones that are mentioned or targeted most frequently in the red tag-related tweets.
 									</p>
 								</div>	
 							</div>
@@ -167,18 +167,18 @@
 
 						<section class="box style5">
 							<div class="row">
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">To enhance analysis and modeling efficiency, the removal of stop words is employed. The WordCloud library offers a predefined set of English stop words such as "and," "the," and "in," which are commonly used but do not contribute significant contextual information. These words are excluded from the dataset to prioritize more relevant terms and reduce noise. However, the word "up" is manually excluded from the English stop words list to avoid erroneously removing instances referring to the University of the Philippines. Additionally, Filipino stop words are considered, sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl" target="_blank">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets regarding colleges and universities.</p>
+								</div>	
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
 									<h3>Stop words removal</h3>
 									<p></p>
 								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Stop words are removed to improve analysis or modeling efficiency. WordCloud library provides a predefined set of English stop words like "and," "the," and "in" that are frequently used but don't add much context. These words are eliminated from the dataset to prioritize more important terms and reduce noise. The word "up" is manually excluded from the English stop words to prevent mistakenly removing instances of "UP" referring to the  University of the Philippines. Filipino stop words are also considered. The words were sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl" target="_blank">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets about colleges and universities.</p>
-								</div>	
 							</div>
 						</section>
 
-						<section class="box style5">
+						<!-- <section class="box style5">
 							<div class="row">
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
@@ -189,7 +189,7 @@
 									<p class = "description">Stemming and lemmatization are techniques used to reduce words to their base or root form. Stemming involves removing prefixes and suffixes from words to obtain the stem, while lemmatization maps words to their base or dictionary form. These techniques help to reduce word variations and consolidate similar terms, improving the effectiveness of text analysis.</p>
 								</div>	
 							</div>
-						</section>
+						</section> -->
 					</div>
 				</div>
 
@@ -208,21 +208,23 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Interpolation: Time series data often contains missing values or irregular intervals. Interpolation techniques are used to estimate the missing values based on the available data points. Common interpolation methods include linear interpolation, polynomial interpolation, or spline interpolation.</p>
+									<p class = "description"> To aggregate the data, the date and time is resampled to a monthly frequency and then the mean value is calculated for each month. This interpolation method using <code>interpolate()</code>to fill in any missing values or smooths out irregularities in the data by fitting a spline curve through the existing data points.</p>
+									<div href="#" class="image visualization"><img src="images/visualization/interpolation_1.png" alt="" /></div>
 								</div>	
 							</div>
 						</section>
 
 						<section class="box style5">
 							<div class="row">
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">To simplify and organize continuous date and time data, it was divided into Monthly, Yearly intervals or bins by using <code>groupby()</code>. A specific use of this collecting the number of tweets per month using <code>...groupby(pd.Grouper(key="Date posted", freq="1M")).count()</code>, and collecting number and mean of engagements per year <code>...groupby(pd.Grouper(key="Date posted", freq="1Y")).sum()</code> and <code>...groupby(pd.Grouper(key="Date posted", freq="1Y")).mean()</code>
+									</p>
+								</div>	
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
 									<h3>Binning</h3>
 									<p></p>
 								</div>
-								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Binning is the process of dividing a continuous time series into discrete intervals or bins. This can be useful for aggregating data and analyzing trends at different time scales. Binning can be done based on fixed time intervals (e.g., hourly, daily) or adaptive intervals (e.g., based on data density or statistical properties).</p>
-								</div>	
 							</div>
 						</section>					
 					</div>
@@ -246,7 +248,7 @@
 							<p>These plots show the distribution and relationship between two continuous variables. Scatterplots display the relationship between variables, while histograms illustrate the distribution of a single variable.:</p>
 						</header>
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div class="image visualization"><img src="images/visualization/scatterplot_1.png" alt="" /></div>
 								<p>
 									This scatterplot display the relationship between the number of retweets and the length of the tweet.
@@ -254,7 +256,7 @@
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div class="image visualization"><img src="images/visualization/scatterplot_2.png" alt="" /></div>
 								<p>
 									This scatterplot display the relationship between the content type and the number of engagements of the tweet
@@ -266,7 +268,7 @@
 							<p>Heat maps provide a visual representation of the correlation between different features. This is particularly useful for identifying patterns or relationships between variables in a tabular format.</p>
 						</header>
 						<div class="col-12 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div href="#" class="image visualization"><img src="images/visualization/heatmap_1.png" alt="" /></div>
 								<p>Visual representation of the correlation between number of likes, replies, and retweets, and length of tweet</p>
 							</article>
@@ -276,20 +278,20 @@
 							<p>These plots are used to compare categorical variables or visualize the distribution of a continuous variable across different categories. Bar plots display the frequency or count of each category, while swarm plots show individual data points along with the distribution. Violin plots combine a box plot and a kernel density plot to display the distribution of data.</p>
 						</header>
 						<div class="col-12 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div href="#" class="image visualization"><img src="images/visualization/bargraph_1.png" alt="" /></div>
 								
 								<p>This bar plot display the frequency of each length of tweets</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div href="#" class="image visualization"><img src="images/visualization/wordcloud_1.png" alt="" /></div>
 								<p>This Word Cloud serves as a visual representation of the frequency of words within the gathered tweets</p>
 							</article>
 						</div>
 						<div class="col-6 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div href="#" class="image visualization"><img src="images/visualization/wordcloud_2.png" alt="" /></div>
 								<p>This Word Cloud serves as a visual representation of the frequency of Emojis within the gathered Account bio</p>
 							</article>
@@ -299,19 +301,19 @@
 							<p>Line graphs are commonly used for time series analysis to visualize the trend or pattern of a variable over time. They show the relationship between two continuous variables with time on the x-axis.</p>
 						</header>
 						<div class="col-12 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<div href="#" class="image visualization"><img src="images/visualization/timeseries_1.png" alt="" /></div>
 								<p>This line graph or time series graph shows frequency of tweets over the given time period</p>
 							</article>
 						</div>
 
-						<header>
+						<!-- <header>
 							<h3>3D/multidimensional/multivariate plots</h3>
 							<p>These plots are used to visualize relationships between multiple variables simultaneously. Examples include scatterplot matrices, which display scatterplots of multiple variable combinations in a grid format, providing a comprehensive view of pairwise relationships. Multidimensional or multivariate plots help to identify patterns, clusters, or correlations between multiple variables.</p>
 						</header>
 						
 						<div class="col-12 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<h3><a href="#"></a></h3>
 								<p></p>
 							</article>
@@ -320,19 +322,17 @@
 						<header>
 							<h3>Interactive plots</h3>
 							<p>Interactive plots allow users to explore and interact with the data by zooming, panning, hovering, or selecting specific data points. Tools like Plotly enable the creation of interactive visualizations that can provide more detailed information or allow for customized analysis.</p>
-						</header>
-						
-						
+						</header>	
 						<div class="col-12 col-6-medium col-12-small">
-							<article class="box style2">
+							<article class="box style6">
 								<h3><a href="#"></a></h3>
 								<p></p>
 							</article>
-						</div>
+						</div> -->
 					</div>
 					
 					<footer>
-						<p>Each plot in the visualization stage should have a title or caption that clearly describes the purpose or key finding. Axes labels with units of measurement should be included to provide context for the variables being plotted. Legends are used when multiple colors, markers, or sizes are employed to differentiate different categories or groups in the plot.</p>
+						<p>As seen in the Python notebooks code each plot in the visualization stage have a title or caption that clearly describes the purpose or key finding. Axes labels with units of measurement are included to provide context for the variables being plotted. Legends are used when multiple colors, markers, or sizes are employed to differentiate different categories or groups in the plot.</p>
 					</footer>
 				</div>
 			</article>
@@ -342,10 +342,10 @@
 				<div class="container">
 					<header>
 						<h1>FEATURE ANALYSIS</h1>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>Features within a dataset were examined to gain insights and make informed decisions about their relevance and usefulness for the topic.</p>
 					</header>
 
-					<div class="row aln-center">
+					<!-- <div class="row aln-center">
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span class="icon featured fa-comments"></span>
@@ -359,14 +359,27 @@
 								<h3>Dimensionality reduction (PCA, SVD)</h3>
 								<p>Dimensionality reduction techniques, such as Principal Component Analysis (PCA) or Singular Value Decomposition (SVD), are applied when dealing with high-dimensional data. These methods transform the original features into a lower-dimensional space while preserving the most important information. Dimensionality reduction helps to simplify the analysis and visualization of complex datasets.</p>
 							</section>
-						</div>
+						</div> -->
 						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
+							<section class="box style5">
+								<div class="row">
+									<div class="col-4 col-6-medium col-12-small">
+										<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+										<h3>Feature generation</h3>
+										<p></p>
+									</div>
+									<div class="col-8 col-6-medium col-12-small">
+										<p class = "description">School and Tweet Length features based on existing data were added to help in further analysis. The "School" <code>(df_clean['school'])</code> feature was generated by extracting values from the tweets using a manually created dictionary of college acronyms and related words. The "Tweet Length" <code>(df_clean['Length'])</code> feature represents the length of each tweet, providing information about the number of characters or words used in the tweet.</p>
+									</div>	
+								</div>
+							</section>
+
+							<!-- <section class="box style1">
 								<span class="icon featured fa-thumbs-up"></span>
 								<h3>Feature generation /engineering (includes additional column/s during data collection)</h3>
-								<p>Feature generation or engineering involves creating new features based on existing ones or external knowledge. This can include extracting additional columns during data collection or creating derived features that capture specific characteristics or relationships within the data. 
+								<p>School and Tweet Length features based on existing data were added to help in further analysis. The "School" feature was generated by extracting values from the tweets using a manually created dictionary of college acronyms and related words. The "Tweet Length" feature represents the length of each tweet, providing information about the number of characters or words used in the tweet. 
 								</p>
-							</section>
+							</section> -->
 						</div>
 					</div>
 
