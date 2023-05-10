@@ -2528,14 +2528,14 @@ input, select, textarea {
 
 				
 				.box.style6 {
-					min-width: 35em;
+					max-width: 35em;
 					margin-left: auto !important;
 					margin-right: auto !important;
 					
 				}
 
 				.box.style5{
-					min-width: 35em;
+					max-width: 35em;
 					margin-left: auto !important;
 					margin-right: auto !important;
 					height: auto;

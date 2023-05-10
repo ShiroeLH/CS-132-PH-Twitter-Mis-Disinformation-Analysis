@@ -70,7 +70,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns screenshot, location, views and remarks are dropped since they have missing values. For account without bio, empty string ("") were used.
+											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns "Screenshot," "Location," "Views," and "Remarks" are dropped from the dataset as they contain missing values. For accounts without a bio, an empty string ("") is used to represent the missing value.
 											</p>
 										</div>	
 									</div>
@@ -96,11 +96,11 @@
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
 											<a href="#" class="image num-photo"><img src="images/pic03.jpg" alt="" /></a>
-											<h5>Ensuring formatting consistency (date, labels, etc.)</h5>
+											<h5>Ensuring formatting consistency</h5>
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS
+											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS.
 											</p>
 										</div>	
 									</div>
@@ -130,7 +130,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">To ensure easier exploration of data, the categorical feature Account type were encoded as numerical values: Anonymous(0), Identified(1), and Media (2) for exploration of correlation of acocunt type and number of engagement. The emoji were also transformed into text for frequency analysis as seen in the word cloud below.
+											<p class = "description">To facilitate data exploration, the categorical feature "Account type" was encoded into numerical values: 0 for "Anonymous," 1 for "Identified," and 2 for "Media." This encoding allows for the examination of correlations between the account type and the number of engagements. Additionally, the dataset's emoji data was transformed into textual representations to conduct frequency analysis, visualized in the word cloud, providing insights into the prevalence and impact of different emojis. 
 											</p>
 										</div>	
 									</div>
@@ -159,7 +159,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Using WordCloud, the tweets is divided into individual words or tokens, which is then analyzed separately.Additionally, lowercasing is applied to ensure consistency and treat words with different capitalizations as the same. To determine which colleges and universities are most targeted in the red tag-related tweets, a dictionary is created. This dictionary consists of the acronyms or abbreviations of various colleges and universities, with their corresponding full names as the values. The dictionary is created in lowercase to match the lowercase tokens. The frequency of occurrence of each college or university is tracked by checking how many times their lowercase representation appears in the tokenized tweets. By analyzing the frequency of these colleges and universities in the tokens, it becomes possible to identify which ones are most frequently mentioned or targeted in the red tag-related tweets.
+									<p class = "description">In order to analyze the tweets effectively, the WordCloud technique is employed to break down the tweets into individual words or tokens, which are then examined separately. To identify the colleges and universities that are most targeted in the red tag-related tweets, a dictionary is constructed. This dictionary contains lowercase acronyms or abbreviations of various educational institutions, with their corresponding full names as the values. The frequency of each college or university is determined by counting how many times its lowercase representation appears among the tokenized tweets. By analyzing the frequency of these institutions in the tokens, we can identify the ones that are mentioned or targeted most frequently in the red tag-related tweets.
 									</p>
 								</div>	
 							</div>
@@ -168,7 +168,7 @@
 						<section class="box style5">
 							<div class="row">
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">Stop words are removed to improve analysis or modeling efficiency. WordCloud library provides a predefined set of English stop words like "and," "the," and "in" that are frequently used but don't add much context. These words are eliminated from the dataset to prioritize more important terms and reduce noise. The word "up" is manually excluded from the English stop words to prevent mistakenly removing instances of "UP" referring to the  University of the Philippines. Filipino stop words are also considered. The words were sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl" target="_blank">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets about colleges and universities.</p>
+									<p class = "description">To enhance analysis and modeling efficiency, the removal of stop words is employed. The WordCloud library offers a predefined set of English stop words such as "and," "the," and "in," which are commonly used but do not contribute significant contextual information. These words are excluded from the dataset to prioritize more relevant terms and reduce noise. However, the word "up" is manually excluded from the English stop words list to avoid erroneously removing instances referring to the University of the Philippines. Additionally, Filipino stop words are considered, sourced from the <a href="https://github.com/stopwords-iso/stopwords-tl" target="_blank">stopwords-tl repository</a> on GitHub. By eliminating both English and Filipino stop words, the analysis focuses on more meaningful and informative terms found in red tag-related tweets regarding colleges and universities.</p>
 								</div>	
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
@@ -208,7 +208,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description"> To aggregate the data, the date and time is resampled to a monthly frequency and then the mean value is calculated for each month. This interpolation method using <code>interpolate()</code>fills in any missing values or smooths out irregularities in the data by fitting a spline curve through the existing data points.</p>
+									<p class = "description"> To aggregate the data, the date and time is resampled to a monthly frequency and then the mean value is calculated for each month. This interpolation method using <code>interpolate()</code>to fill in any missing values or smooths out irregularities in the data by fitting a spline curve through the existing data points.</p>
 									<div href="#" class="image visualization"><img src="images/visualization/interpolation_1.png" alt="" /></div>
 								</div>	
 							</div>
@@ -332,7 +332,7 @@
 					</div>
 					
 					<footer>
-						<p>Each plot in the visualization stage should have a title or caption that clearly describes the purpose or key finding. Axes labels with units of measurement should be included to provide context for the variables being plotted. Legends are used when multiple colors, markers, or sizes are employed to differentiate different categories or groups in the plot.</p>
+						<p>As seen in the Python notebooks code each plot in the visualization stage have a title or caption that clearly describes the purpose or key finding. Axes labels with units of measurement are included to provide context for the variables being plotted. Legends are used when multiple colors, markers, or sizes are employed to differentiate different categories or groups in the plot.</p>
 					</footer>
 				</div>
 			</article>
