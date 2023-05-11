@@ -1999,11 +1999,17 @@ input, select, textarea {
 
 		.box.style2 h3 {
 			margin-bottom: 0.25em;
+			padding-top: .5em;
 		}
 
 		.box.style2:hover{
 			/* border-style: solid lightblue; */
-			background-color: lightblue;
+			background-color: #9f8920;
+		}
+
+		.box.style2:hover h3{
+			color:#fff;
+			text-shadow: none;
 		}
 			/* .box.style2 .link {
 				background-color: lightblue;
@@ -2022,6 +2028,7 @@ input, select, textarea {
 		.box.style6 h3 {
 			margin-bottom: 0.25em;
 		}
+
 
 		.box.style6 .image {
 			position: relative;
