@@ -57,7 +57,7 @@
 				<div class="container">
 					<header>
 						<h1>PREPROCESSING</h1>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>Some steps and techniques were used to transform the gatehred raw data into a suitable format for analysis and data modeling.</p>
 					</header>
 					<div class="r-question">
 						<div class="row">
@@ -70,7 +70,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns "Screenshot," "Location," "Views," and "Remarks" are dropped from the dataset as they contain missing values. For accounts without a bio, an empty string ("") is used to represent the missing value.
+											<p class = "description">In this step, any missing values in the dataset are identified and handled appropriately. The columns "Screenshot," "Location," "Views," and "Remarks" are dropped from the dataset as they contain missing values. For accounts without a bio, an empty string ("") is used to represent the missing value. The columns that has null values are dropped to create <code>df_clean</code>.
 											</p>
 										</div>	
 									</div>
@@ -100,7 +100,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: YYYY-MM-DD HH:MM:SS.
+											<p class = "description">The date formatting inconsistencies are addressed to ensure uniformity across the dataset. Pandas default datetime format is used: <code>YYYY-MM-DD HH:MM:SS</code>. This is saved as .<code>Date posted</code> feature in <code>df_clean</code>.
 											</p>
 										</div>	
 									</div>
@@ -130,8 +130,7 @@
 											<p></p>
 										</div>
 										<div class="col-8 col-6-medium col-12-small">
-											<p class = "description">To facilitate data exploration, the categorical feature "Account type" was encoded into numerical values: 0 for "Anonymous," 1 for "Identified," and 2 for "Media." This encoding allows for the examination of correlations between the account type and the number of engagements. Additionally, the dataset's emoji data was transformed into textual representations to conduct frequency analysis, visualized in the word cloud, providing insights into the prevalence and impact of different emojis. 
-											</p>
+											<p class = "description">To facilitate data exploration, the categorical feature "Account type" was encoded into numerical values: 0 for "Anonymous," 1 for "Identified," and 2 for "Media." This transformed value is saved as <code>Account type</code> feature in <code>df_clean</code>. Additionally, the dataset's emoji data was transformed into aliases using the <code>emoji</code> library.</p>
 										</div>	
 									</div>
 								</section>
@@ -208,7 +207,7 @@
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description"> To aggregate the data, the date and time is resampled to a monthly frequency and then the mean value is calculated for each month. This interpolation method using <code>interpolate()</code>to fill in any missing values or smooths out irregularities in the data by fitting a spline curve through the existing data points.</p>
+									<p class = "description"> To aggregate the data, the date and time is resampled to a monthly frequency and then the mean value is calculated for each month. To handle any missing values within a time period, the interpolation method using <code>interpolate()</code> with <code>method='spline'</code> is used to  perform spline interpolation on the data. Spline interpolation is a mathematical technique used to fit a smooth curve (spline) through the data points through piecewise-defined function that consists of multiple polynomial segments.</p>
 									<div href="#" class="image visualization"><img src="images/visualization/interpolation_1.png" alt="" /></div>
 								</div>	
 							</div>
