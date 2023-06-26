@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data exploration</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Nav -->
+	
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html#overview">Overview</a></li>
+					<li><a href="index.html#data">Data</a></li>
+					<li><a href="index.html#methods">Methods</a></li>
+					<li><a href="dataexploration.html">Exploration</a></li>
+					<li><a href="#top">Stat & ML</a></li>
+					<li><a href="index.html#results">Result</a></li>
+					<li><a href="index.html#poster">Poster</a></li>
+					<li><a href="index.html#team">Team</a></li>
+
+				</ul>
+			</nav>
+			
+
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						
+					</div>
+					<div class="row">
+						<div class="col-12-medium">
+							<header>
+								<h1><img class= "logo centered mx-auto" src="images/logo.png" alt=""/>'s Data Modeling</h1>
+								<p> Now, let's unveil the insights with Statistical using <strong><em><a href="#stat-test" style="text-decoration: none;">Chi-Square Test</a></em></strong>, and Machine Learning Techniques using <strong><em><a href="#mach-lrn" style="text-decoration: none;">Naive Bayes Classifier</a></em></strong>, and <strong><em><a href="#mach-lrn" style="text-decoration: none;">Long Short-Term Memory Networks</a></em></strong></p>
+							</header>
+						</div>
+					</div>
+					<footer>
+						<a href="https://github.com/ShiroeLH/CS-132-PH-Twitter-Mis-Disinformation-Analysis/tree/main/analysis" class="button large scrolly  justify-content-center" target="_blank">Take a look at our Data Modeling code</a>
+					</footer>
+				</div>
+			</article>
+
+		<!-- STAT-TEST -->
+			<article id="stat-test" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h1>Statistical Analysis using Chi-Square Test</h1>
+						<p>Chi-square Test was used to analyze the association between red tag tweets and the mention of the University of the Philippines (UP)</p>
+					</header>
+
+					<div class="q-col">
+						<div class="l">
+							<b> Null Hypothesis (H0): </b>
+							<br> No association between red tag tweets and the 
+							mention of UP
+						</div>
+						<div class="l">
+						<b> Alternative Hypothesis (H1):</b> 
+						<br> UP is the dominating target of red tag tweets
+						</div>
+					</div>
+
+					<section class="box style5">
+						<div class="row">
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
+								<h3>Perform the Appropriate Statistical Test</h3>
+								<p></p>
+							</div>
+							<div class="col-8 col-6-medium col-12-small">
+								<p class = "description">
+									To analyze the association between different categories of tweets, we used the chi-square test. Specifically, we employed the chi-square test available in the Scipy stats library, using the (<code>scipy.stats.chisquare</code>)function. This test allowed us to examine whether the observed frequencies of the different tweet categories significantly deviate from the expected frequencies, assuming that the categories are equally likely.
+								</p>
+								<p class = "description">We manually tagged the tweets into different categories: <br>1. those mentioning UP, <br>2. those mentioning a school other than UP, <br>3. those mentioning both UP and another school, and <br>4. those not mentioning any school names.
+								</p>
+							</div>	
+						</div>
+					</section>
+
+					<section class="box style5">
+						<div class="row">
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
+								<h3>Identify and Validate Assumptions</h3>
+								<p></p>
+							</div>
+							<div class="col-8 col-6-medium col-12-small">
+								<p class = "description">To determine the association between red tag tweets and the mention of UP, we utilized the Chi-Square test, which is a statistical test suitable for analyzing categorical data and assessing if the observed frequencies significantly deviate from the expected frequencies.
+								</p>
+								<p class = "description">It is important to note that the Chi-Square test relies on certain assumptions. These assumptions include:
+									<br>1. All expected counts are at least 5 for <code>scipy.stats.chisquare</code> to be valid.
+									<br> 2.	Individual observations are independent, and the population should be at least 10 times as large as the sample.
+								</p>
+								<p class="description">These assumptions are crucial in ensuring the reliability and validity of the Chi-Square test results.</p>
+
+								<p class="description">The specific counts for the categories in our analysis are as follows: <br>
+								1. Tweets mentioning UP: 87<br>
+								2. Tweets mentioning a school other than UP: 9<br>
+								3. Tweets mentioning both UP and another school: 22<br>
+								4. Tweets not mentioning any school names: 50<br>
+								These counts are used to determine the observed frequencies in the test. Since the tweets with mentions of both UP and other schools are counted independently, the categories are considered independent. The sample size analyzed consists of 168 tweets, which is most likely more than 10 times larger than the total number of tweets, related to the study, on Twitter.</p>	
+							</div>	
+						</div>
+					</section>
+					
+					<img src="images/visualization/bargraph_3_observed_freq.png" alt="" />
+					<section class="box style5">
+						<div class="row">
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
+								<h3>Test Statistics and P-Values</h3>
+								<p></p>
+							</div>
+							<div class="col-8 col-6-medium col-12-small">
+								<p class = "description">After applying the chi-square test to our data, we obtained the following results:
+								</p>								
+								<p class = "description"><strong>Chi-square statistic</strong>
+									: 85.19<br><strong>p-value</strong>
+									: 2.36e-18<br><strong>Degrees of Freedom</strong>
+									: 3<br><strong>Alpha (significance level)</strong>
+									: 0.05
+								</p>
+							</div>	
+						</div>
+					</section>
+
+					<section class="box style5">
+						<div class="row">
+							<div class="col-4 col-6-medium col-12-small">
+								<a href="#" class="image mem-photo"><img src="images/pic01.jpg" alt="" /></a>
+								<h3>Interpretation and Conclusion</h3>
+								<p></p>
+							</div>
+							<div class="col-8 col-6-medium col-12-small">
+								<p class = "description">To interpret the results, we compared the p-value with the significance level. If the p-value is less than the significance level, we reject the null hypothesis. Conversely, if the p-value is greater than or equal to the significance level, we fail to reject the null hypothesis.
+								</p>
+								<p class = "description">The chi-square statistic is a measure that helps assess the degree of association between categorical variables. In our analysis, the chi-square statistic of 85.19 indicates a significant deviation from the expected frequencies.  A higher chi-square statistic indicates a larger difference between the observed and expected frequencies which was set as equallit likely based on the implementation of <code>scipy.stats.chisquare</code>.
+								</p>
+								<p class = "description">Considering our results, the calculated p-value of 2.36e-18 is significantly lower than our chosen significance level of 0.05. Therefore, we reject the null hypothesis, which stated no association between red tag tweets and the mention of UP. The evidence provided by the chi-square test suggests a strong and significant association between the target of red tag tweets and the mention of UP.
+								</p>
+								<p class = "description">In summary, the obtained chi-square statistic of 85.19 and the very small p-value of 2.36e-18 provide strong evidence against the null hypothesis. Based on these findings, we have compelling evidence to support the claim that <strong>UP is the dominating target of red tag tweets</strong>. The chi-square analysis demonstrates a strong statistical association between the target of red tag tweets and the mention of UP, reinforcing the hypothesis that UP is specifically targeted in these instances.
+								</p>
+							</div>	
+						</div>
+					</section>
+
+				</div>
+
+				<div class="container">
+					<header>
+						<h2>Machine Learning using LTSM and Naive Bayes</h2>
+						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+					</header>
+					<header>
+						<h3>Naive Bayes</h3>
+						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+					</header>
+					<div class="r-question">
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
+									<h3>SAMPLE FEEL FREE TO USE</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">LOREM IPSUM
+									</p>
+								</div>	
+							</div>
+						</section>
+					<header>
+						<h3>LTSM</h3>
+						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+					</header>
+					<div class="r-question">
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>SAMPLE FEEL FREE TO USE</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class = "description">LOREM IPSUM
+									</p>
+								</div>	
+							</div>
+						</section>
+
+			</div>
+			</div>
+			</article>
+
+		<!-- MACHINE-LEARNING -->
+			<article id="mach-lrn" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h1>Machine Learning</h1>
+						<p>Lorem Ipsum</p>
+					</header>
+
+				</div>
+			</article>
+
+
+
+		<!-- We'd like to hear from you -->
+			<article id="contact" class="wrapper style4">
+				<div class="container medium">
+					<header> 
+						<h2>We'd like to hear from you</h2>
+					</header>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<form name="contact_form">
+								<div class="row">
+									<div class="col-6 col-12-small">
+										<input type="text" name="name" id="name" placeholder="Name"/>
+									</div>
+									<div class="col-6 col-12-small">
+										<input type="email" name="email" id="email" placeholder="Email"/>
+									</div>
+									<div class="col-12">
+										<input type="text" name="subject" id="subject" placeholder="Subject"/>
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><button type="button" onclick="sendEmail()">Send a Message</button></li>
+											<li><button type="reset" value="Clear Form" class="alt">Clear Form</button></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="col-12">
+							<hr />
+							<h3>Find me on ...</h3>
+							<ul class="social">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+								<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+								<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+								<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+								<!--
+								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+								-->
+							</ul>
+							<hr />
+						</div>
+					</div>
+					<footer>
+						<ul id="copyright">
+							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+				</div>
+			</article>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script src="https://smtpjs.com/v3/smtp.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+			<script>
+				
+				function sendEmail(){
+					const form = document.getElementById("contact_form");
+					name = document.getElementById("name").value;
+					email = document.getElementById("email").value;
+					subject = document.getElementById("subject").value;
+					msg = document.getElementById("message").value;
+
+					console.log(name,email,subject,msg)
+
+					Email.send({
+						SecureToken : "29b05827-fffb-43d0-9f97-a4042e25d0f2",
+						To : 'redelosreyes3@up.edu.ph,aealoveros@up.edu.ph,jsdoros1@up.edu.ph',
+						From : 'cs132contactus@gmail.com',
+						Subject : [subject,' from ',email].join(''),
+						Body : msg
+					}).then(
+					message => alert(message)
+					);
+
+				};
+
+				
+
+
+			</script>
+
+	</body>
+</html>

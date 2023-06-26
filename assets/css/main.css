@@ -2634,3 +2634,17 @@ input, select, textarea {
 					}
 
 	}
+
+	.poster {
+		max-width: 100%;
+		height: auto;
+	  }
+  
+	  @media (max-width: 767px) {
+		/* Styles for mobile devices */
+		.poster {
+		  /* Adjust the width and height as per your requirements */
+		  width: 100%;
+		  height: auto;
+		}
+	  }
