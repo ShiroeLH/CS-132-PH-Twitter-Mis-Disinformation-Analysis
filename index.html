@@ -14,20 +14,20 @@
 	<body class="is-preload">
 
 		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#top">Home</a></li>
-					<li><a href="#overview">Overview</a></li>
-					<li><a href="#data">Data</a></li>
-					<li><a href="#methods">Methods</a></li>
-					<li><a href="dataexploration.html">Exploration</a></li>
-					<li><a href="datamodeling.html">Stat & ML</a></li>
-					<li><a href="#results">Result</a></li>
-					<li><a href="#conclusion">Conclusion</a></li>
-					<li><a href="#poster">Poster</a></li>
-					<li><a href="#team">Team</a></li>
-				</ul>
-			</nav>
+		<nav id="nav">
+			<ul class="container">
+				<li><a href="#top">Home</a></li>
+				<li><a href="#overview">Overview</a></li>
+				<li><a href="#data">Data</a></li>
+				<li><a href="#methods">Methods</a></li>
+				<li><a href="dataexploration.html">Exploration</a></li>
+				<li><a href="datamodeling.html">Stat & ML</a></li>
+				<li><a href="#results">Result</a></li>
+				<li><a href="#conclusion">Conclusion</a></li>
+				<li><a href="#poster">Poster</a></li>
+				<li><a href="#team">Team</a></li>
+			</ul>
+		</nav>
 
 		<!-- Home -->
 			<article id="top" class="wrapper style1">
@@ -38,6 +38,7 @@
 								<h1>Hi. We are <img class= "logo centered mx-auto" src="images/logo.png" alt=""/>.</h1>
 							</header>
 							<p>And this is our project, <strong>PH Twitter Fake News Analysis: Red tagging students from different universities</strong>, <em>which explores the extent to which Philippine Twitter accounts propagate student redtagging mis/disinformation</em></p>
+							
 							<p>Data Science Team</p>
 							<ul style="list-style-type:none; margin-top:-30px;">
 							  <li>Rey Christian Delos Reyes, WFW</li>
@@ -97,11 +98,11 @@
 						<div class="q-col">
 							<div class="l">
 								<b> Hypothesis: </b>
-								<br>  State universities/top 4 universities [UP, ADMU, DLSU, UST] are the dominating targets of red tag tweets.
+								<br>  University of the Philippines is the dominating target of red tag tweets.
 							</div>
 							<div class="l">
 							<b> Null Hypothesis:</b> 
-							<br> No notable universities are dominating the red tag tweets target.
+							<br> No association between red tag tweets and the mention of UP.
 							</div>
 							<div class="l">
 								<b>Action Plan:</b> 
@@ -204,7 +205,7 @@
 				<div class="container">
 					<header>
 						<h2>Summary of Result</h2>
-						<p>Here's a summary of the result. For more detailed discussion of the result, check <strong><em><a href="datamodeling.html" style="text-decoration: none;">Data Modeling</a></em></strong> page</p>
+						<p>Here's a summary of the result. For more detailed discussion, check <strong><em><a href="datamodeling.html" style="text-decoration: none;">Data Modeling</a></em></strong> page</p>
 					</header>
 
 					<div class="row">
@@ -212,12 +213,12 @@
 							<article class="box style6">
 								<a href="#" class="image featured"><img src="images/visualization/bargraph_3_observed_freq.png" alt="" />
 								</a>
-								<h3><a href="#">Stat Analysis using Chi-square</a></h3>
-								<p class = "description">After applying the chi-square test to our data, we obtained the following results:
-									<br><strong>Chi-square statistic</strong>: 85.19
-									<br><strong>p-value</strong>: 2.36e-18
-									<br><strong>Degrees of Freedom</strong>: 3
-									<br><strong>Alpha (significance level)</strong>: 0.05
+								<h3><a href="#">Statistical Analysis using Chi-square</a></h3>
+								<p class = "description"><br>After applying the chi-square test to our data, we obtained the following results:
+									<br>⦿&nbsp;&nbspChi-square statistic: 85.19
+									<br>⦿&nbsp;&nbspp-value: 2.36e-18
+									<br>⦿&nbsp;&nbspDegrees of Freedom: 3
+									<br>⦿&nbsp;&nbspAlpha (significance level): 0.05
 								</p>
 								<p class = "description">The chi-square statistic of 85.19 indicates a significant deviation from the equally likely expected frequencies, and the calculated p-value of 2.36e-18 is significantly lower than our chosen significance level. Based on these findings, we have compelling evidence to support the claim that <strong>UP is the dominating target of red tag tweets</strong>.</p>
 								
@@ -227,9 +228,9 @@
 							<article class="box style6">
 								<a href="#" class="image featured"><img src="images/visualization/confusionmatrix_ltsm_naive.png" alt="" />
 								</a>
-								<h3><a href="#">Machine Learning using Naive Bayes and LTSM</a></h3>
+								<h3><a href="#">Machine Learning using LTSM and Naive Bayes</a></h3>
 								<p class="description">
-									<br><b>Results:</b><br>
+									<b>Results:</b><br>
 									⦿&nbsp;&nbsp;Testing on separate data with a 0.5 sentiment classification threshold.<br>
 									⦿&nbsp;&nbsp;The dataset was shuffled and then divided into two sets: training and testing sets<br>
 									⦿&nbsp;&nbsp;Used 213 data as training set and 92 data as testing set from a pool of 305 labeled misinformation tweets (30% for testing).<br>
