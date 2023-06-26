@@ -228,7 +228,17 @@
 								<a href="#" class="image featured"><img src="images/visualization/confusionmatrix_ltsm_naive.png" alt="" />
 								</a>
 								<h3><a href="#">Machine Learning using Naive Bayes and LTSM</a></h3>
-								<p>REY ADD SUMMARY OF RESULTS HERE.</p>
+								<p class="description">
+									<br><b>Results:</b><br>
+									⦿&nbsp;&nbsp;Testing on separate data with a 0.5 sentiment classification threshold.<br>
+									⦿&nbsp;&nbsp;The dataset was shuffled and then divided into two sets: training and testing sets<br>
+									⦿&nbsp;&nbsp;Used 213 data as training set and 92 data as testing set from a pool of 305 labeled misinformation tweets (30% for testing).<br>
+									⦿&nbsp;&nbsp;The Naive Bayes model provided a testing accuracy of 97.82% while the LSTM model achieved a testing accuracy of 95.65%, indicating high performance.<br>
+
+									<br><b>Considerations:</b><br>
+									⦿&nbsp;&nbsp;Dataset bias is mainly composed of misinformation tweets.<br>
+									⦿&nbsp;&nbsp;Further analysis is needed to address potential biases in sentiment classification.<br>
+								</p>
 							</article>
 						</div>
 						
@@ -240,12 +250,33 @@
 			</article>
 
 			<!-- Conclusion -->		
-			<article id="conclusion" class="wrapper style3">
+			<article id="conclusion" class="wrapper">
 				<div class="container">
 					<header>
-						<h2>Conclusion</h2>
-						<p>For the conclusion, add the deets for Data Comms here josh.</p>
+						<h2>Conclusion, Implication, and Recommendations</h2>
 					</header>
+					<article class="box style6">
+					<h3>Conclusion</h3>
+						<p class="description">Our research question focused on identifying the university most targeted by red tag-related tweets, and our hypothesis that UP is the primary target was supported by the data. Our findings strongly support the alternative hypothesis, as evidenced by the results obtained from the chi-square test.</p>
+						<p class="description">Furthermore, we developed a machine learning classifier using both Naive Bayes and LSTM models to distinguish red-tagging tweets from non-red-tagging tweets. The models achieved high testing accuracies, with the Naive Bayes model performing slightly better. This indicates the potential of machine learning techniques in identifying red tagging on social media platforms.</p>
+					</article>
+					<article class="box style6">
+						<h3>Implication</h3>
+						<p class="description">Raises awareness about red tagging's impact on individuals and communities: This study brings attention to the prevalence of red tagging in the Philippines, particularly targeting students and universities. By highlighting the negative consequences such as harassment and physical harm, the study aims to mobilize action to address red tagging and protect individuals.</p>
+						<p class="description">Highlights the importance of combating disinformation and online harassment: Through the examination of red tagging on social media, this study emphasizes the need to address the spread of false information and online harassment. It advocates for strategies like fact-checking and creating a safer online environment.</p>
+						<p class="description">Emphasizes the need to safeguard individuals online: Recognizing red tagging as a violation of fundamental rights, the study calls for proactive measures to protect individuals. This includes legal protection, awareness campaigns, and collaborations with relevant authorities and organizations to reduce red tagging incidents.</p>
+					</article>
+					<article class="box style6">
+						<h3>Recommendations</h3>
+						<p class="description">In this project, we have found compelling evidence to support the claim that UP is the dominating target of red tag tweets. After realizing the study's significance based on our results, we can consider several actions: </p>
+								 <p class="description">
+									➊ &nbsp Investigate the reasons why UP is the primary target of red-tagging. <br>
+									➋ &nbsp Provide legal assistance to those affected by red-tagging in the university. <br>
+									➌ &nbsp Coordinate with the University Police Force (UPF) to ensure the safety of students, faculty, and staff against potential threats brought about by the red-tagging. <br>
+									➍ &nbsp Collaborate with other universities and create a joint effort to advocate for the protection of academic institutions. <br>
+								 	➎ &nbsp Engage with Twitter for them to adopt the red-tag tweet classification model.
+								</p>
+					</article>
 				</div>
 			</article>
 

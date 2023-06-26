@@ -155,56 +155,283 @@
 							</div>	
 						</div>
 					</section>
-
 				</div>
+			</article>
 
+			<!-- MACHINE-LEARNING -->
+			<article id="stat-test" class="wrapper style2">
 				<div class="container">
 					<header>
-						<h2>Machine Learning using LTSM and Naive Bayes</h2>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<h1>Machine Learning using LSTM and Naive Bayes</h1>
+						<p>Classification models were used to differentiate between red-tagging tweets and non-red tag related tweets that mention universities</p>
 					</header>
+
+					<div class="q-col">
+						<h3>Procedures pre-Training</h3>
+						<div class="l">
+							<b> Python Modules: </b>
+							<br> We used <i>pandas</i> and <i>numpy</i> for data manipulation, <i>nltk</i> for NLP, <i>matplotlib</i>, <i>seaborn</i>, and <i>plotly</i> for data visualization, <i>sklearn</i> (Multinomial Naive Bayes) and <i>keras</i> (LSTM) for training the model.
+						</div>
+						<div class="l">
+							<b> Setting the Random Seed:</b> 
+							<br> to make the output of the models more consistent with the given inputs. Note that since the models are affected by random seeds, we can set the seeds to a constant number (Do note however that this was <i>avoided for this project</i>). 
+						</div>
+						<div class="l">
+							<b> Loading the Datasets:</b> 
+							<br> The datasets found in `/analysis/Dataset - Group 32.xlsx` folder were loaded using <i>openpyxl</i>. The datasets comprise collected tweets from twitter and its translation to English which contain both red-tagging and non-red-tagging tweets.<br>
+							<br> The whole dataset is split into 3 parts: <i>training set</i> and <i>test set</i> which in total contains <b>132 tweets</b>. The training set is used to train the model and the test set is used to test the model. The training set is <b>70% of the whole dataset and the test set is 30% of the whole dataset</b>. The datasets are split using <i>sklearn</i>.
+						</div>
+					</div>
+
+					<br><br>
 					<header>
 						<h3>Naive Bayes</h3>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>The Naive Bayes classifier is a simple probabilistic machine learning algorithm based on Bayes' theorem. It is called "naive" because it makes a strong assumption of independence among the features, assuming that the presence or absence of one feature does not affect the presence or absence of any other feature.</p>
 					</header>
 					<div class="r-question">
 						<section class="box style5">
 							<div class="row">
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
-									<h3>SAMPLE FEEL FREE TO USE</h3>
+									<h3>Benefits and Disadvantages</h3>
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">LOREM IPSUM
+									
+									<p class = "description">
+										The Naive Bayes classifier calculates the probability of a given data instance belonging to a particular class based on the probabilities of the features. Here are some <b>benefits</b> of the Naive Bayes classifier: <br>
+										<br>1. Simplicity: Naive Bayes is a straightforward algorithm that is relatively easy to understand and implement. 
+										<br>2. Efficiency: Naive Bayes can be trained quickly and efficiently since it computes probabilities directly from the training data. 
+										<br>3. Scalability: Due to its simplicity and efficiency, Naive Bayes can handle large datasets with high-dimensional feature spaces.
+										<br>4. Robustness: Naive Bayes is robust to irrelevant features<br>
+
+										<br>While the Naive Bayes classifier has several benefits, it also has some <b>limitations and disadvantages</b>. Here are some of the main drawbacks of the Naive Bayes classifier:<br>
+										<br>1. Assumption of Feature Independence: The Naive Bayes classifier assumes that all features are independent of each other.
+										<br>2. Sensitivity to Input Data: Naive Bayes can be sensitive to the quality and representativeness of the training data.  
+										<br>3. Inability to Handle Missing Data: Naive Bayes does not handle missing values as it relies on complete data instances.
+										<br>4. Limited Expressiveness: Due to its assumption of feature independence, Naive Bayes may struggle to capture complex relationships.
 									</p>
 								</div>	
 							</div>
 						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
+									<h3>Preparing the data</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class="description">
+										In order to use the data for predictive modeling, we first prepare it by 'TfidfVectorizer'. The “Term Frequency  Inverse Document” Frequency method:<br>
+										<br>(a) Term Frequency: summarizes how often a given word appears within a document
+										<br>(b) Inverse Document Frequency: downscales words that appear a lot across documents.<br>
+
+										<br>The `TfidfVectorizer` method is used to both the `text_train` and `text_test` data to tokenize, and learn the vocabulary,inverse document frequency weightings, and give a higher weight to words that occur less frequently.
+
+
+										<br><br><b>Reference</b>: https://machinelearningmastery.com/prepare-text-data-machine-learning-scikit-learn/
+									</p>
+									
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
+									<h3>Training the data</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class="description">
+										We could then train the Naive Bayes Model using the Multinomial Naive Bayes classifier `MultinomialNB`. This method from `sklearn.naive_bayes` is suitable for the data case where classification is based on the discrete feature which is the word count using `TfidfVectorizer`.
+										The Naive Bayes classifier is fit according to the train data's text `train_term` and its corresponding tag `tag_train`. Classification is then performed on both the <b>normalized train data</b> `train_term` and <b>normalized test data</b> `test_term` from the previous section.
+									</p>
+									
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic02.jpg" alt="" /></a>
+									<h3>Results</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									<p class="description">
+										The `sklearn.metric`’s confusion matrix was used to evaluate the Naive Bayes model’s performance. This matrix helps in visualizing the count for the predicted labels, `predictions_train` and `predictions_test`, versus the true labels, `tag_train`
+										and `tag_test` respectively. The confusion matrix can be interpreted as the number of true positive connotations in the top left, false negative in the top right, false positive in the bottom left, and true negative in the lower right. The `plot_confusion_matrix` also has a parameter for normalizing the confusion matrix. 
+									</p>
+									
+									<img src="images/visualization/confusionmatrix_naivebayes.png" alt="" />
+
+									<p class="description">
+										The method `accuracy_score` from `sklearn.metrics` is then used to compute for the <b>F1 score of the model</b>. This is done by computing the subset accuracy wherein the set of labels predicted for a sample must exactly match the corresponding set of labels in `tag_train` in the case of the train data and `tag_test` in the case of the test data.
+
+										<br><br><b>Test Accuracy:</b> 0.9782608695652174
+									</p>
+								</div>	
+							</div>
+						</section>
+					</div>
+
+					<br><br>
 					<header>
 						<h3>LTSM</h3>
-						<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+						<p>
+							LSTM stands for Long Short-Term Memory, which is a type of recurrent neural network (RNN) architecture. LSTM networks are designed to overcome the limitations of traditional RNNs in capturing and remembering long-term dependencies in sequential data.</p>
 					</header>
 					<div class="r-question">
 						<section class="box style5">
 							<div class="row">
 								<div class="col-4 col-6-medium col-12-small">
 									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
-									<h3>SAMPLE FEEL FREE TO USE</h3>
+									<h3>Benefits and Disadvantages</h3>
 									<p></p>
 								</div>
 								<div class="col-8 col-6-medium col-12-small">
-									<p class = "description">LOREM IPSUM
+									
+									<p class = "description">
+										LSTMs have gained popularity in various applications, particularly in natural language processing (NLP), speech recognition, machine translation, and time series analysis. <b>LSTMs offer several benefits for classification tasks</b>:<br>
+										<br>1. Handling Long-Term Dependencies: LSTMs are specifically designed to capture and model long-term dependencies in sequential data.  
+										<br>2. Modeling Sequential Patterns: LSTMs can learn complex sequential patterns and relationships in data. They can identify temporal dependencies and patterns that exist across multiple time steps, allowing them to capture intricate relationships in the input sequence.
+										<br>3. Robust to Noisy Data: LSTMs can handle noisy or missing data within a sequence. The memory cells in LSTMs enable the network to selectively retain or forget information, allowing them to handle noisy or irrelevant elements in the sequence.<br>
+
+										<br>While LSTM networks offer several advantages for classification tasks, <b></b>they also have certain disadvantages</b>:
+										<br>1. Computational Complexity: LSTMs can be computationally expensive, especially when dealing with large datasets or complex architectures. 
+										<br>2. Overfitting: LSTMs, like other deep learning models, are prone to overfitting, especially when the training data is limited or unbalanced. Overfitting occurs when the model becomes too specialized in the training data and fails to generalize well to unseen data.
+										<br>3. Large Training Data Requirements: LSTMs often require a significant amount of training data to learn meaningful patterns and achieve good classification performance. <br>
+
+										<br>It is good to state here that given that the dataset used for this project only contained <b>305</b> tweets in total, the LSTM model may not be able to perform well.
 									</p>
 								</div>	
 							</div>
 						</section>
 
-			</div>
-			</div>
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>Pre-processing</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									
+									<p class = "description">
+										For the preprocessing phase, each text in the dataset is tokenized using the `tf.keras.preprocessing.text.Tokenizer` method with the maximum number of features retrieved set to 3000. The `fit_on_texts` method updates the vocabulary to be used by the model using the phrases found in the translated tweet column of the dataset. Then, the tokens are transformed into a sequence of integers using the `texts_to_sequences` method and subsequently padded to match different text lengths using the `pad_sequences` method.
+									</p>
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>Building the Model</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									
+									<p class = "description">
+										We can then build the model using the Keras library. The LSTM model is first initialized using the Keras' `Sequential` class followed by the addition of <b>3</b> layer instances to the layer stack:<br>
+										<br>1. Embedding Layer - Takes in the integer tokens generated	 from the previous cell
+										<br>2. LSTM Layer - A <b>16</b> unit layer that processes the output from the embedding layer and handles weight updates for each word in the vocabulary.
+										<br>3. Dense Layer - Takes in the output from the LSTM layer and has a <b>1</b> output neuron with a sigmoid activation function.<br>
+
+										<br>`<i>Binary_crossentropy</i>` loss, since the model classifies data through Binary (<b>0 or 1</b>), and `<i>Adam optimizer</i>`, an efficient weight optimization algorithm, are then used to train the model. In a general sense, optimizers update the model by modifying attributes of the models of a neural network (e.g. weights and learning rates). First note that stochastic gradient descent optimizes an objective function, which in this case is the model. In a sense, it is a probabilistic approximation of gradient descent. Each step in a <b>SGD</b> calculates the gradient for one observation picked at random instead of the whole dataset. Adam optimizer is a combination of two <b>SGD</b> methodologies.
+
+										<code>
+											<br><br><b>CODE SNIPPET:</b><br>
+											embed_dim = 64<br>
+											lstm_out = 16<br>
+											model = Sequential()<br>
+											model.add(Embedding(max_features, embed_dim, input_length=text.shape[1]))<br>
+											model.add(LSTM(lstm_out))<br>
+											model.add(Dense(1,activation='sigmoid'))<br>
+											model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])<br>
+											print(model.summary())<br>
+										</code>
+									</p>
+								</div>	
+							</div>
+						</section>
+						
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>Training the Model</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									
+									<p class = "description">
+										We split the tag and text values and check the size of the testing and training data set.
+										<code>
+											<br><br><b>CODE SNIPPET:</b><br>
+											classification = df['Classification'].values<br>
+											text_train, text_test, tag_train, tag_test = train_test_split(text,classification, test_size = 0.3)<br>
+											print(text_train.shape,tag_train.shape)<br>
+											print(text_test.shape,tag_test.shape)<br><br>
+										</code>
+
+										We train with a batch size of $16$ and train for $6$ epoch. The performance of the model is measured on the validation dataset.
+										<code>
+											<br><br><b>CODE SNIPPET:</b><br>
+											batch_size = 16<br>
+											model.fit(text_train,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag_train,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;epochs=6,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;batch_size=batch_size,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validation_data=(text_test, tag_test),<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callbacks = [EarlyStopping(monitor='val_accuracy',<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_delta=0.001,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;patience=10,<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;verbose=1)]<br>
+											)<br>
+										</code>
+
+									</p>
+								</div>	
+							</div>
+						</section>
+
+						<section class="box style5">
+							<div class="row">
+								<div class="col-4 col-6-medium col-12-small">
+									<a href="#" class="image mem-photo"><img src="images/pic03.jpg" alt="" /></a>
+									<h3>Results</h3>
+									<p></p>
+								</div>
+								<div class="col-8 col-6-medium col-12-small">
+									
+									<p class = "description">
+										To check the accuracy of predictions of the LSTM model, the treshhold of 0.5 (negative if less than 0.5) was set to determine the classification of the text. The accuracy of the model is <b>0.9565217391304348</b> and the loss is <b>0.2990</b>.<br>
+										<code>
+											<br>7/7 [==============================] - 1s 19ms/step
+											<br>3/3 [==============================] - 0s 15ms/step
+											<br>Train accuracy: 0.9906103286384976
+											<br>Test accuracy: 0.9565217391304348
+										</code>
+
+										<br><br>Similar to the Naive Bayes model, a confusion matrix is used to evaluate the LSTM model's performance.<br><br>
+
+										<img src="images/visualization/confusionmatrix_ltsm.png" alt="" />
+
+									</p>
+								</div>	
+							</div>
+						</section>
+					</div>
 			</article>
 
-		<!-- MACHINE-LEARNING -->
+		<!-- MACHINE-LEARNING 
 			<article id="mach-lrn" class="wrapper style3">
 				<div class="container">
 					<header>
@@ -214,7 +441,7 @@
 
 				</div>
 			</article>
-
+		-->
 
 
 		<!-- We'd like to hear from you -->
